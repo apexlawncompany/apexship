@@ -17,11 +17,11 @@ export default function AboutCompany() {
         </div>
         <div className={styles.textContainer}>
           <h3 className={`heading-font ${styles.subtitle}`}>
-            <bold>INDUSTRY ON DEMAND</bold>
+            INDUSTRY ON DEMAND
           </h3>
           <br />
           <h2 className={`heading-font ${styles.title}`}>
-            <bold>OUR COMPANY</bold>
+            OUR COMPANY
           </h2>
           <br />
           <p className={styles.description}>

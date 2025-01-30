@@ -2,7 +2,7 @@
   background-color: #f6f2ef;
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  /* align-items: start; */
   flex-wrap: wrap;
   gap: 20px;
   padding: 50px 130px;

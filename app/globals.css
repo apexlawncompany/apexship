@@ -36,6 +36,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
+.page-content {
+  padding: 50px 130px;
+}
 
 .heading-font {
   font-family: "Bungee", sans-serif;

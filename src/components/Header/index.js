@@ -32,7 +32,7 @@ export default function Header() {
       {/* Navigation Bar Below Logo */}
       <nav className={styles.nav}>
         {AVAIL_SERVICES.map((service, idx) => (
-          <Link key={idx} href={service.path}>
+          <Link  key={idx} href={service.path}>
             {service.text}
           </Link>
         ))}
