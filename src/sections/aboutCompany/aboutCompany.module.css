@@ -1,0 +1,50 @@
+.AboutCompany {
+  color: white;
+}
+
+.section1,
+.section2,
+.section3 {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.imageContainer {
+  flex: 1;
+  position: relative;
+}
+
+.textContainer {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Text Overflow Only for First Section */
+.section1 .textContainer {
+  position: absolute;
+  right: 0;
+  width: 55%;
+  border-radius: 10px;
+  background-color: #646464;
+}
+
+/* Reverse Layout for Odd Sections */
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.subtitle {
+  font-size: 16px;
+}
+
+.title {
+  font-size: 35px;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.3;
+  text-align: justify;
+  font-weight: 300;
+}

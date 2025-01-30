@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+.marketing {
+  text-align: center;
+  background-color: white;
+  padding: 48px 20px;
+}
+
+.marketing h2 {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.sectionContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.section {
+  width: 300px;
+  text-align: center;
+  /* background: white; */
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.image {
+  border-radius: 12px;
+}
+
+.title {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.description {
+  font-size: 16px;
+  text-align: justify;
+  line-height: 1.4;
+  padding: 0 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .sectionContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section {
+    width: 90%;
+  }
+}

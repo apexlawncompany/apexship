@@ -2,6 +2,7 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -22,6 +23,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #646464;
 }
 
 * {
@@ -33,6 +35,12 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.heading-font {
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 @media (prefers-color-scheme: dark) {

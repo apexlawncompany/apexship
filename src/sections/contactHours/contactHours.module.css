@@ -1,0 +1,69 @@
+.contactContainer {
+  background-color: #f6f2ef;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 50px 130px;
+}
+
+.contactTitle {
+  font-size: 26px;
+  color: #803200;
+  text-transform: uppercase;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.mapContainer {
+  width: 45%;
+  min-width: 300px;
+}
+
+.contactInfo {
+  width: 25%;
+  min-width: 200px;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 1.3;
+  color: rgb(128, 51, 0);
+}
+
+.contactInfo a {
+  color: #5172ec;
+  font-weight: 400;
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+.contactInfo a:hover {
+  text-decoration: underline;
+}
+.contactInfo a:visited {
+  color: #7c4e9c;
+}
+
+.hours {
+  width: 25%;
+  min-width: 200px;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 1.4;
+  color: rgb(128, 51, 0);
+  padding-top: 55px;
+}
+
+@media (max-width: 768px) {
+  .contactContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mapContainer,
+  .contactInfo,
+  .hours {
+    width: 100%;
+    text-align: center;
+  }
+}
