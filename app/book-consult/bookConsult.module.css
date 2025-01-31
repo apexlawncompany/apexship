@@ -1,0 +1,75 @@
+.formContainer {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form label {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form input,
+.form select,
+.form textarea {
+  color: white;
+  background-color: transparent;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form button {
+  background-color: #b54e00;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: #933b00;
+}
+/* Target the date input */
+.form input[type="date"] {
+  color: white;
+  appearance: none; /* Remove default styles */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+}
+
+/* Add a white calendar icon */
+.form input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* Makes the icon white */
+  cursor: pointer;
+}
+.form select {
+  color: white;
+  appearance: none; /* Remove default browser styles */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+.form select option {
+  background-color: white; /* Black background */
+  color: black; /* White text */
+}
+.error {
+  color: #933b00;
+  font-size: 12px;
+  margin-top: 5px;
+}
