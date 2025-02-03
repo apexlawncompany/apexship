@@ -1,14 +1,13 @@
-import SideBar from "@/src/components/Sidebar";
-import styles from "../print-shipping-products/print&products.module.css";
+import styles from "../signage-mounting/signage&mounting.module.css";
 
-export default function PrintAndProducts() {
+export default function SignageAndMounting() {
   return (
     <div className={`page-content ${styles.header}`}>
       <div className={styles.links}>
         <SideBar />
       </div>
       <div className={styles.content}>
-        <h2 className={`heading-font`}>Print & Shipping products</h2>
+        <h2 className={`heading-font`}>Signage & Mounting</h2>
         <br />
         <p>
           Items aren't available for sale yet on this page. Come back later to

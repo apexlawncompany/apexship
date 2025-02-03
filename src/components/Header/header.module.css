@@ -96,8 +96,35 @@
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
 }
 
 .nav a:hover {
+  transform: scale(1.1); /* Zooms in by 10% */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Active Main Service */
+.activeService {
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #ffcc00;
   text-decoration: underline;
+  padding-right: 16px;
+}
+
+/* Subcategories */
+.subNavItem {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.subNavItem:hover {
+  transform: scale(1.1);
 }

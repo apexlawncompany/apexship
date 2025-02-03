@@ -1,27 +1,31 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import AVAIL_SERVICES from "@/src/data/availableServices";
 import styles from "../Header/header.module.css";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const selectedService = AVAIL_SERVICES.find(
+    (service) => service.path === pathname
+  );
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100); // Adjust scroll trigger as needed
+      setIsScrolled(window.scrollY > 100);
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
-      {/* Full Header (Shown at the top) */}
+      {/* Full Header */}
       <header className={`${styles.header} ${isScrolled ? styles.hidden : ""}`}>
         <div className={styles.container}>
           <div className={styles.logoContainer}>
@@ -46,12 +50,30 @@ export default function Header() {
           </div>
         </div>
 
+        {/* Navigation */}
         <nav className={styles.nav}>
-          {AVAIL_SERVICES.map((service, idx) => (
-            <Link key={idx} href={service.path}>
-              {service.text}
-            </Link>
-          ))}
+          {selectedService ? (
+            <>
+              {/* Highlighted Main Service */}
+              <span className={styles.activeService}>
+                {selectedService.text}
+              </span>
+
+              {/* Display Subcategories */}
+              {selectedService.subcategories?.map((sub, idx) => (
+                <Link key={idx} href={sub.path} className={styles.subNavItem}>
+                  {sub.text}
+                </Link>
+              ))}
+            </>
+          ) : (
+            /* Show Main Services Only if No Service is Selected */
+            AVAIL_SERVICES.map((service, idx) => (
+              <Link key={idx} href={service.path}>
+                {service.text}
+              </Link>
+            ))
+          )}
         </nav>
       </header>
 
@@ -60,11 +82,24 @@ export default function Header() {
         className={`${styles.miniHeader} ${isScrolled ? styles.visible : ""}`}
       >
         <nav className={styles.nav}>
-          {AVAIL_SERVICES.map((service, idx) => (
-            <Link key={idx} href={service.path}>
-              {service.text}
-            </Link>
-          ))}
+          {selectedService ? (
+            <>
+              <span className={styles.activeService}>
+                {selectedService.text}
+              </span>
+              {selectedService.subcategories?.map((sub, idx) => (
+                <Link key={idx} href={sub.path} className={styles.subNavItem}>
+                  {sub.text}
+                </Link>
+              ))}
+            </>
+          ) : (
+            AVAIL_SERVICES.map((service, idx) => (
+              <Link key={idx} href={service.path}>
+                {service.text}
+              </Link>
+            ))
+          )}
         </nav>
 
         <div className={styles.actions}>
