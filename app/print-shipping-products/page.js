@@ -1,20 +1,88 @@
+import SideBar from "@/src/components/Sidebar";
 import styles from "../print-shipping-products/print&products.module.css";
+import Image from "next/image";
 
 export default function PrintAndProducts() {
   return (
-    <div className={`page-content ${styles.header}`}>
-      <div className={styles.links}>
-        <p>Browse by category</p>
-        <p>All items</p>
-        <a href="/print-shipping-products">Print & Shipping products</a><br/>
-        <a href="/print-shipping-products">Shipping & Courier Service</a><br/>
-        <a href="/print-shipping-products">Design & Marketing Service</a><br/>
-        <a href="/print-shipping-products">Signage & Mounting</a><br/>
-      </div>
+    <div className={`${styles.header}`} style={{ padding: "10px 0px" }}>
+      {/* <div>
+        <SideBar />
+      </div> */}
       <div className={styles.content}>
-        <h2 className={`heading-font`}>Print & Shipping products</h2>
-        <br/>
-        <p>Items aren't available for sale yet on this page. Come back later to purchase!</p>
+        {/* Flyers & Brochures Section */}
+        <div id="flyers-brochures" className={styles.productSection}>
+          <div className={styles.imageContainer}>
+            <Image
+              src="/assets/prints/brouchers-and-flyer.webp"
+              alt="Flyers"
+              width={650}
+              height={350}
+              className={styles.image}
+            />
+          </div>
+          <div className={styles.textContainer}>
+            <h2 className={`heading-font ${styles.title}`}>
+              FLYRES & BROCHURES
+            </h2>
+            <br />
+            <p className={styles.description}>
+              Get high-quality flyers and brochures to help spread the word
+              about your business. Available in various sizes and finishes, our
+              printed materials will ensure your message stands out. Whether
+              you're promoting an event, a sale, or your brand, we've got the
+              perfect options for you.
+            </p>
+          </div>
+        </div>
+        {/* <hr style={{margin:"5px 0"}} /> */}
+        {/* Posters & Vinyl Section */}
+        <div id="posters-vinyl" className={styles.productSection}>
+          <div className={styles.textContainer}>
+            <h2 className={`heading-font ${styles.title}`}>POSTERS & VINYL</h2>
+            <br />
+            <p className={styles.description}>
+              Our posters and vinyl banners are perfect for showcasing your
+              advertisements or art in a big way! Whether you're looking for a
+              custom design or a large format print, we have options for both
+              indoor and outdoor use. Durable and vibrant, these prints are
+              designed to catch the eye of your audience.
+            </p>
+          </div>
+          <div className={styles.imageContainer}>
+            <Image
+              src="/assets/prints/poster.webp"
+              alt="posters"
+              width={600}
+              height={350}
+              className={styles.image}
+            />
+          </div>
+        </div>
+        {/* <hr style={{margin:"5px 0"}} /> */}
+
+        {/* Custom Packing Section */}
+        <div id="custom-package" className={styles.productSection}>
+          <div className={styles.imageContainer}>
+            <Image
+              src="/assets/prints/custom-package.jpg"
+              alt="Packages"
+              width={650}
+              height={300}
+              className={styles.image}
+            />
+          </div>
+          <div className={styles.textContainer}>
+            <h2 className={`heading-font ${styles.title}`}>CUSTOM PACKING</h2>
+            <br />
+            <p className={styles.description}>
+              Need personalized packing materials? We offer custom packaging
+              solutions to keep your products safe during shipping. From custom
+              boxes to branded packing tape, we can design packaging that
+              represents your brand and provides extra protection for your
+              goods.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

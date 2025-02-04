@@ -6,12 +6,13 @@
 }
 
 .container {
-  width: 50%; /* Restrict content to half of the page */
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .content {
+  max-width: 50%;
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Align all left */
@@ -50,6 +51,7 @@
 }
 
 .newsletter {
+  max-width: 50%;
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Align all left */
@@ -64,7 +66,7 @@
   display: flex;
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 475px;
 }
 
 .emailForm input {
@@ -74,7 +76,7 @@
   background-color: transparent;
   border: 1px solid #ccc;
   border-radius: 25px;
-  padding-right: 80px; /* Space for button */
+  padding-right: 80px;
 }
 
 .emailForm button {
@@ -107,9 +109,8 @@
   text-decoration: underline;
 }
 
-/* Copyright aligns to the right */
 .copyright {
-  align-self: flex-end; /* Moves © 2025 to the right */
+  align-self: flex-end;
   font-size: 14px;
   margin-top: 20px;
 }
