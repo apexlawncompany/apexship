@@ -4,9 +4,9 @@ const AVAIL_SERVICES = [
     text: "Print & Products",
     path: "/print-shipping-products",
     subcategories: [
-      { text: "Flyers & Brochures", path: "/print-products/flyers-brochures" },
-      { text: "Posters & Vinyl", path: "/print-products/posters-vinyl" },
-      { text: "Custom Packing", path: "/print-products/custom-packing" },
+      { id:"flyres-brochures", text: "Flyers & Brochures", path: "/print-shipping-products/flyers-brochures" },
+      { id:"posters-vinyl", text: "Posters & Vinyl", path: "/print-shipping-products/posters-vinyl" },
+      { id:"custom-packing", text: "Custom Packing", path: "/print-shipping-products/custom-packing" },
     ],
   },
   {
@@ -15,14 +15,16 @@ const AVAIL_SERVICES = [
     path: "/shipping-courier-service",
     subcategories: [
       {
+        id:"direct-pickup",
         text: "Direct Pickup Shipping",
-        path: "/shipping-courier/direct-pickup",
+        path: "/shipping-courier-service/direct-pickup",
       },
       {
+        id:"virtual-pickup",
         text: "Virtual Address & Mailboxes",
-        path: "/shipping-courier/virtual-mailboxes",
+        path: "/shipping-courier-service/virtual-mailboxes",
       },
-      { text: "Drop-Off Shipping", path: "/shipping-courier/drop-off" },
+      { id:"drop-off", text: "Drop-Off Shipping", path: "/shipping-courier-service/drop-off" },
     ],
   },
   {
@@ -30,9 +32,9 @@ const AVAIL_SERVICES = [
     text: "Design & Marketing",
     path: "/design-marketing-service",
     subcategories: [
-      { text: "Advertising", path: "/design-marketing/advertising" },
-      { text: "Graphic Design", path: "/design-marketing/graphic-design" },
-      { text: "Web & App Development", path: "/design-marketing/web-app" },
+      { id:"advertising", text: "Advertising", path: "/design-marketing-service/advertising" },
+      { id:"graphic-design", text: "Graphic Design", path: "/design-marketing-service/graphic-design" },
+      { id:"web-development", text: "Web & App Development", path: "/design-marketing-service/web-app" },
     ],
   },
   {
@@ -40,9 +42,9 @@ const AVAIL_SERVICES = [
     text: "Signage & Mounting",
     path: "/signage-mounting",
     subcategories: [
-      { text: "Temporary Signage", path: "/signage-mounting/temporary" },
-      { text: "Permanent Signage", path: "/signage-mounting/permanent" },
-      { text: "Mounting", path: "/signage-mounting/mounting" },
+      { id:"temporary-signage", text: "Temporary Signage", path: "/signage-mounting/temporary-signage" },
+      { id:"permanent-signage", text: "Permanent Signage", path: "/signage-mounting/permanent-signage" },
+      { id:"mounting", text: "Mounting", path: "/signage-mounting/mounting" },
     ],
   },
 ];

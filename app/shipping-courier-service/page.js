@@ -3,17 +3,13 @@ import styles from "../shipping-courier-service/shipping&courier.module.css";
 
 export default function ShippingAndCourier() {
   return (
-    <div className={`page-content ${styles.header}`}>
-      <div className={styles.links}>
+    <div className={`${styles.header}`} style={{ padding: "10px 0px" }}>
+      {/* <div className={styles.links}>
         <SideBar />
-      </div>
+      </div> */}
       <div className={styles.content}>
         <h2 className={`heading-font`}>Shipping & Courier Service</h2>
         <br />
-        <p>
-          Items aren't available for sale yet on this page. Come back later to
-          purchase!
-        </p>
 
         {/* Embedded FedEx Shipping Estimator */}
         <div className={styles.shippingEstimator}>

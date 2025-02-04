@@ -1,0 +1,63 @@
+.sidebar {
+  padding: 10px;
+  /* background: rgba(0, 0, 0, 0.1);  */
+  border-radius: 8px;
+  width: 150px;
+}
+
+.sidebar h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.allItemsButton {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.allItemsButton:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.serviceList {
+  margin-top: 10px;
+}
+
+.serviceButton {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.1); /* Transparent button */
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 5px 0;
+  transition: background 0.3s ease-in-out;
+}
+
+.serviceButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.subNavItem {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.subNavItem:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds a slight shadow */
+}
