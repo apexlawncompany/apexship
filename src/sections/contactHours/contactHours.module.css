@@ -1,18 +1,17 @@
 .contactContainer {
-  background-color: #f6f2ef;
   display: flex;
   justify-content: space-between;
   /* align-items: start; */
   flex-wrap: wrap;
   gap: 20px;
-  padding: 50px 130px;
+  padding : 30px 0px;
 }
 
 .contactTitle {
   font-size: 26px;
   color: #803200;
   text-transform: uppercase;
-  text-align: justify;
+  text-align: left;
   margin-bottom: 20px;
 }
 

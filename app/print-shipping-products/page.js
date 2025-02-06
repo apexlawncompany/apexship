@@ -4,19 +4,17 @@ import Image from "next/image";
 
 export default function PrintAndProducts() {
   return (
-    <div className={`${styles.header}`} style={{ padding: "10px 0px" }}>
-      {/* <div>
-        <SideBar />
-      </div> */}
-      <div className={styles.content}>
+    <div className={`${styles.parentBlock}`}>
+      
+      <div className={`page-margin margin-top margin-bottom ${styles.content}`}>
         {/* Flyers & Brochures Section */}
         <div id="flyers-brochures" className={styles.productSection}>
           <div className={styles.imageContainer}>
             <Image
               src="/assets/prints/brouchers-and-flyer.webp"
               alt="Flyers"
-              width={650}
-              height={350}
+              width={550}
+              height={300}
               className={styles.image}
             />
           </div>
@@ -53,7 +51,7 @@ export default function PrintAndProducts() {
               src="/assets/prints/poster.webp"
               alt="posters"
               width={600}
-              height={350}
+              height={300}
               className={styles.image}
             />
           </div>
@@ -64,15 +62,15 @@ export default function PrintAndProducts() {
         <div id="custom-package" className={styles.productSection}>
           <div className={styles.imageContainer}>
             <Image
-              src="/assets/prints/custom-package.jpg"
+              src="/assets/prints/custom-packaging.jpg"
               alt="Packages"
-              width={650}
+              width={550}
               height={300}
               className={styles.image}
             />
           </div>
           <div className={styles.textContainer}>
-            <h2 className={`heading-font ${styles.title}`}>CUSTOM PACKING</h2>
+            <h2 className={`heading-font ${styles.title}`}>CUSTOM PACKAGING & BRANDING</h2>
             <br />
             <p className={styles.description}>
               Need personalized packing materials? We offer custom packaging

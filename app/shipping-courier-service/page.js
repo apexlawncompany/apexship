@@ -3,11 +3,11 @@ import styles from "../shipping-courier-service/shipping&courier.module.css";
 
 export default function ShippingAndCourier() {
   return (
-    <div className={`${styles.header}`} style={{ padding: "10px 0px" }}>
+    <div className={`${styles.header}`}>
       {/* <div className={styles.links}>
         <SideBar />
       </div> */}
-      <div className={styles.content}>
+      <div className={`page-margin ${styles.content}`}>
         <h2 className={`heading-font`}>Shipping & Courier Service</h2>
         <br />
 

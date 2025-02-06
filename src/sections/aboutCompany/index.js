@@ -3,9 +3,9 @@ import Image from "next/image";
 
 export default function AboutCompany() {
   return (
-    <div className={styles.AboutCompany}>
+    <div className={`margin-bottom ${styles.aboutCompany}`}>
       {/* First Section */}
-      <div className={styles.section1}>
+      <div className={`margin-right ${styles.section1}`}>
         <div className={styles.imageContainer}>
           <Image
             src="/assets/home/our_company.jpg"
@@ -33,7 +33,7 @@ export default function AboutCompany() {
       </div>
 
       {/* Second Section */}
-      <div className={styles.section2}>
+      <div className={`margin-left ${styles.section2}`}>
         <div className={styles.textContainer}>
           <h3 className={`heading-font ${styles.subtitle}`}>SOURCED LOCALLY</h3>
           <br />
@@ -60,7 +60,7 @@ export default function AboutCompany() {
       </div>
 
       {/* Third Section */}
-      <div className={`${styles.section3} ${styles.reverse}`}>
+      <div className={`margin-right ${styles.section3} ${styles.reverse}`}>
         <div className={styles.textContainer}>
           <h3 className={`heading-font ${styles.subtitle}`}>CATERED TO YOUR BUSINESS</h3>
           <br />

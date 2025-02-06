@@ -6,7 +6,7 @@ const AVAIL_SERVICES = [
     subcategories: [
       { id:"flyres-brochures", text: "Flyers & Brochures", path: "/print-shipping-products/flyers-brochures" },
       { id:"posters-vinyl", text: "Posters & Vinyl", path: "/print-shipping-products/posters-vinyl" },
-      { id:"custom-packing", text: "Custom Packing", path: "/print-shipping-products/custom-packing" },
+      { id:"custom-packing", text: "Custom Packaging & Branding", path: "/print-shipping-products/custom-packaging-branding" },
     ],
   },
   {

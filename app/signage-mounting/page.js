@@ -3,11 +3,11 @@ import styles from "../signage-mounting/signage&mounting.module.css";
 
 export default function SignageAndMounting() {
   return (
-    <div className={`${styles.header}`} style={{ padding: "10px 0px" }}>
+    <div className={`${styles.header}`}>
       {/* <div className={styles.links}>
         <SideBar />
       </div> */}
-      <div className={styles.content}>
+      <div className={`page-margin ${styles.content}`}>
         <h2 className={`heading-font`}>GALLERY</h2>
         <br />
         <p>
