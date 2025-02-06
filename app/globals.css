@@ -36,8 +36,26 @@ a {
   color: inherit;
   text-decoration: none;
 }
-.page-content {
-  padding: 50px 130px;
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
+}
+
+.margin-right {
+  margin-right: max(5%, 12px);
+}
+
+.margin-left {
+  margin-left: max(5%, 12px);
+}
+
+.page-margin {
+  margin-left: max(5%, 12px);
+  margin-right: max(5%, 12px);
 }
 
 .heading-font {

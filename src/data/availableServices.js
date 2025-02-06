@@ -4,9 +4,21 @@ const AVAIL_SERVICES = [
     text: "Print & Products",
     path: "/print-shipping-products",
     subcategories: [
-      { id:"flyres-brochures", text: "Flyers & Brochures", path: "/print-shipping-products/flyers-brochures" },
-      { id:"posters-vinyl", text: "Posters & Vinyl", path: "/print-shipping-products/posters-vinyl" },
-      { id:"custom-packing", text: "Custom Packing", path: "/print-shipping-products/custom-packing" },
+      {
+        id: "flyres-brochures",
+        text: "Flyers & Brochures",
+        path: "/print-shipping-products/flyers-brochures",
+      },
+      {
+        id: "posters-vinyl",
+        text: "Posters & Vinyl",
+        path: "/print-shipping-products/posters-vinyl",
+      },
+      {
+        id: "custom-packing",
+        text: "Custom Packaging & Branding",
+        path: "/print-shipping-products/custom-packaging-branding",
+      },
     ],
   },
   {
@@ -15,16 +27,20 @@ const AVAIL_SERVICES = [
     path: "/shipping-courier-service",
     subcategories: [
       {
-        id:"direct-pickup",
+        id: "direct-pickup",
         text: "Direct Pickup Shipping",
         path: "/shipping-courier-service/direct-pickup",
       },
       {
-        id:"virtual-pickup",
+        id: "virtual-pickup",
         text: "Virtual Address & Mailboxes",
         path: "/shipping-courier-service/virtual-mailboxes",
       },
-      { id:"drop-off", text: "Drop-Off Shipping", path: "/shipping-courier-service/drop-off" },
+      {
+        id: "drop-off",
+        text: "Drop-Off Shipping",
+        path: "/shipping-courier-service/drop-off",
+      },
     ],
   },
   {
@@ -32,9 +48,21 @@ const AVAIL_SERVICES = [
     text: "Design & Marketing",
     path: "/design-marketing-service",
     subcategories: [
-      { id:"advertising", text: "Advertising", path: "/design-marketing-service/advertising" },
-      { id:"graphic-design", text: "Graphic Design", path: "/design-marketing-service/graphic-design" },
-      { id:"web-development", text: "Web & App Development", path: "/design-marketing-service/web-app" },
+      {
+        id: "advertising",
+        text: "Advertising",
+        path: "/design-marketing-service/advertising",
+      },
+      {
+        id: "graphic-design",
+        text: "Graphic Design",
+        path: "/design-marketing-service/graphic-design",
+      },
+      {
+        id: "web-development",
+        text: "Web & App Development",
+        path: "/design-marketing-service/web-app",
+      },
     ],
   },
   {
@@ -42,9 +70,17 @@ const AVAIL_SERVICES = [
     text: "Signage & Mounting",
     path: "/signage-mounting",
     subcategories: [
-      { id:"temporary-signage", text: "Temporary Signage", path: "/signage-mounting/temporary-signage" },
-      { id:"permanent-signage", text: "Permanent Signage", path: "/signage-mounting/permanent-signage" },
-      { id:"mounting", text: "Mounting", path: "/signage-mounting/mounting" },
+      {
+        id: "temporary-signage",
+        text: "Temporary Signage",
+        path: "/signage-mounting/temporary-signage",
+      },
+      {
+        id: "permanent-signage",
+        text: "Permanent Signage",
+        path: "/signage-mounting/permanent-signage",
+      },
+      { id: "mounting", text: "Mounting", path: "/signage-mounting/mounting" },
     ],
   },
 ];

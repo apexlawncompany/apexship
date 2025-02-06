@@ -4,18 +4,15 @@ import Image from "next/image";
 
 export default function DesignAndMarketing() {
   return (
-    <div className={`${styles.header}`} style={{ padding: "10px 0px" }}>
-      {/* <div className={styles.links}>
-        <SideBar />
-      </div> */}
-      <div className={styles.content}>
+    <div className={`${styles.header}`}>
+      <div className={`page-margin margin-top margin-bottom ${styles.content}`}>
         {/* AdvertiseSection */}
         <div className={styles.productSection}>
           <div className={styles.imageContainer}>
             <Image
               src="/assets/design/advertise.jpg"
               alt="Advertises"
-              width={650}
+              width={550}
               height={300}
               className={styles.image}
             />
@@ -47,7 +44,7 @@ export default function DesignAndMarketing() {
               src="/assets/design/graphic_design.jpg"
               alt="Graphic design"
               width={600}
-              height={350}
+              height={300}
               className={styles.image}
             />
           </div>
@@ -59,7 +56,7 @@ export default function DesignAndMarketing() {
             <Image
               src="/assets/design/Web-App-Development.jpg"
               alt="Development"
-              width={650}
+              width={550}
               height={300}
               className={styles.image}
             />

@@ -1,22 +1,21 @@
-import SideBar from "@/src/components/Sidebar";
 import styles from "../print-shipping-products/print&products.module.css";
 import Image from "next/image";
 
 export default function PrintAndProducts() {
   return (
-    <div className={`${styles.header}`} style={{ padding: "10px 0px" }}>
-      {/* <div>
-        <SideBar />
-      </div> */}
-      <div className={styles.content}>
+    <div className={`${styles.parentBlock}`}>
+      <div className={`${styles.content}`}>
         {/* Flyers & Brochures Section */}
-        <div id="flyers-brochures" className={styles.productSection}>
+        <div
+          id="flyers-brochures"
+          className={`margin-right ${styles.productSection}`}
+        >
           <div className={styles.imageContainer}>
             <Image
               src="/assets/prints/brouchers-and-flyer.webp"
               alt="Flyers"
-              width={650}
-              height={350}
+              width={600}
+              height={300}
               className={styles.image}
             />
           </div>
@@ -36,7 +35,10 @@ export default function PrintAndProducts() {
         </div>
         {/* <hr style={{margin:"5px 0"}} /> */}
         {/* Posters & Vinyl Section */}
-        <div id="posters-vinyl" className={styles.productSection}>
+        <div
+          id="posters-vinyl"
+          className={`margin-left ${styles.productSection}`}
+        >
           <div className={styles.textContainer}>
             <h2 className={`heading-font ${styles.title}`}>POSTERS & VINYL</h2>
             <br />
@@ -52,8 +54,8 @@ export default function PrintAndProducts() {
             <Image
               src="/assets/prints/poster.webp"
               alt="posters"
-              width={600}
-              height={350}
+              width={665}
+              height={300}
               className={styles.image}
             />
           </div>
@@ -61,18 +63,23 @@ export default function PrintAndProducts() {
         {/* <hr style={{margin:"5px 0"}} /> */}
 
         {/* Custom Packing Section */}
-        <div id="custom-package" className={styles.productSection}>
+        <div
+          id="custom-package"
+          className={`margin-right ${styles.productSection}`}
+        >
           <div className={styles.imageContainer}>
             <Image
-              src="/assets/prints/custom-package.jpg"
+              src="/assets/prints/custom-packaging.jpg"
               alt="Packages"
-              width={650}
+              width={600}
               height={300}
               className={styles.image}
             />
           </div>
           <div className={styles.textContainer}>
-            <h2 className={`heading-font ${styles.title}`}>CUSTOM PACKING</h2>
+            <h2 className={`heading-font ${styles.title}`}>
+              CUSTOM PACKAGING & BRANDING
+            </h2>
             <br />
             <p className={styles.description}>
               Need personalized packing materials? We offer custom packaging
