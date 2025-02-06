@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
-import AVAIL_SERVICES from "@/src/data/availableServices";
 import styles from "./header.module.css";
 import Logo from "./Logo";
 import Navigation from "./Navigation";
