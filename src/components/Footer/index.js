@@ -2,25 +2,26 @@ import styles from "./footer.module.css";
 
 export default function Footer() {
   return (
-    <div className={styles.footer}>
+    <div className={`page-margin margin-bottom margin-top ${styles.footer}`}>
       <div className={styles.container}>
         <div className={styles.content}>
           <h2 className={`heading-font ${styles.logo}`}>APEX SHIP LLC</h2>
 
           <nav className={styles.navLinks}>
             <a href="/print-shipping-products">Print & Products</a>
-            <a href="/print-shipping-products">Shipping & Courier</a>
-            <a href="/print-shipping-products">Design & Marketing</a>
-            <a href="/print-shipping-products">Signage & Mounting</a>
+            <a href="/shipping-courier-service">Shipping & Courier</a>
+            <a href="/design-marketing-service">Design & Marketing</a>
+            <a href="/signage-mounting">Signage & Mounting</a>
           </nav>
         </div>
 
         {/* Horizontal line stays full width */}
         <hr className={styles.divider} />
 
-        <div className={styles.newsletter}>
-          <h3>Stay in the Loop</h3>
-          <div className={styles.emailForm}>
+        <div className={`margin-bottom ${styles.newsletter}`}>
+          <h3 className={`margin-bottom`}>Stay in the Loop</h3>
+
+          <div className={`margin-bottom ${styles.emailForm}`}>
             <input type="email" placeholder="Email" />
             <button>Sign Up</button>
           </div>

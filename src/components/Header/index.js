@@ -7,6 +7,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import AVAIL_SERVICES from "@/src/data/availableServices";
 import styles from "../Header/header.module.css";
+import { motion } from "framer-motion";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,15 +61,19 @@ export default function Header() {
   return (
     <>
       {/* Full Header */}
-      <header className={`${styles.header} ${isScrolled ? styles.hidden : ""}`}>
-        <div className={styles.container}>
+      <header
+        className={`page-margin ${styles.header} ${
+          isScrolled ? styles.hidden : ""
+        }`}
+      >
+        <div className={`margin-top ${styles.container}`}>
           <div
             className={styles.logoContainer}
             onClick={handleLogoClick}
             style={{ cursor: "pointer" }}
           >
             <Image
-              src="/Apex Ship Logo.webp"
+              src="/Apex Ship Logo2.png"
               alt="ApexShip Logo"
               width={85}
               height={98}
@@ -87,28 +92,41 @@ export default function Header() {
         </div>
 
         {/* Navigation */}
-        <nav className={styles.nav}>
+        <nav className={`margin-top margin-bottom ${styles.nav}`}>
           {selectedService ? (
             <>
-              <span className={styles.activeService}>
+              {/* Active Service Title with Smooth Movement */}
+              <motion.span
+                className={styles.activeService}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+              >
                 {selectedService.text}
-              </span>
+              </motion.span>
 
-              {selectedService.subcategories?.map((sub) => (
-                <Link
+              {selectedService.subcategories?.map((sub, index) => (
+                <motion.div
                   key={sub.id}
-                  href={sub.path}
                   className={styles.subNavItem}
+                  initial={{ opacity: 0, width: "auto" }}
+                  animate={{ opacity: 1, width: "auto" }}
+                  transition={{ duration: 1.5, delay: index * 0.2 }}
                 >
-                  {sub.text}
-                </Link>
+                  <Link href={sub.path}>{sub.text}</Link>
+                </motion.div>
               ))}
             </>
           ) : (
             AVAIL_SERVICES.map((service) => (
-              <Link key={service.path} href={service.path}>
-                {service.text}
-              </Link>
+              <motion.div
+                key={service.path}
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Link href={service.path}>{service.text}</Link>
+              </motion.div>
             ))
           )}
         </nav>
@@ -124,7 +142,7 @@ export default function Header() {
           style={{ cursor: "pointer" }}
         >
           <Image
-            src="/Apex Ship Logo.webp"
+            src="/Apex Ship Logo2.png"
             alt="ApexShip Logo"
             width={40}
             height={40}
@@ -134,24 +152,37 @@ export default function Header() {
         <nav className={styles.nav}>
           {selectedService ? (
             <>
-              <span className={styles.activeService}>
+              {/* Active Service Title with Smooth Movement */}
+              <motion.span
+                className={styles.activeService}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+              >
                 {selectedService.text}
-              </span>
-              {selectedService.subcategories?.map((sub) => (
-                <Link
+              </motion.span>
+              {selectedService.subcategories?.map((sub, index) => (
+                <motion.div
                   key={sub.id}
-                  href={sub.path}
                   className={styles.subNavItem}
+                  initial={{ opacity: 0, width: "auto" }}
+                  animate={{ opacity: 1, width: "auto" }}
+                  transition={{ duration: 1.5, delay: index * 0.2 }}
                 >
-                  {sub.text}
-                </Link>
+                  <Link href={sub.path}>{sub.text}</Link>
+                </motion.div>
               ))}
             </>
           ) : (
             AVAIL_SERVICES.map((service) => (
-              <Link key={service.path} href={service.path}>
-                {service.text}
-              </Link>
+              <motion.div
+                key={service.path}
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Link href={service.path}>{service.text}</Link>
+              </motion.div>
             ))
           )}
         </nav>

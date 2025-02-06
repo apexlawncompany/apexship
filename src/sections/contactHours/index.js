@@ -2,10 +2,8 @@ import styles from "../contactHours/contactHours.module.css";
 
 export default function ContactHours() {
   return (
-    <>
-      {/* Contact & Hours Section */}
-
-      <div className={styles.contactContainer}>
+    <div style={{ backgroundColor: "#f6f2ef" }}>
+      <div className={`page-margin ${styles.contactContainer}`}>
         <div className={styles.mapContainer}>
           {/* Updated Google Map Embed */}
           <iframe
@@ -54,6 +52,6 @@ export default function ContactHours() {
           <p>Sunday Closed</p>
         </div>
       </div>
-    </>
+    </div>
   );
 }
