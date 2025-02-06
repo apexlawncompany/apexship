@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function AboutCompany() {
   return (
-    <div className={`margin-bottom ${styles.aboutCompany}`}>
+    <div className={`${styles.aboutCompany}`}>
       {/* First Section */}
       <div className={`margin-right ${styles.section1}`}>
         <div className={styles.imageContainer}>
@@ -34,7 +34,7 @@ export default function AboutCompany() {
 
       {/* Second Section */}
       <div className={`margin-left ${styles.section2}`}>
-        <div className={styles.textContainer}>
+        <div className={styles.textContainer} >
           <h3 className={`heading-font ${styles.subtitle}`}>SOURCED LOCALLY</h3>
           <br />
           <h2 className={`heading-font ${styles.title}`}>PRODUCTS</h2>

@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function CustomPackagingAndBranding() {
   return (
     <>
-      <div className={`${styles.introSection}`}>
+      <div className={`${styles.contrastSection}`}>
         <p style={{ margin: "0 20%", padding: "20px 0" }}>
           {" "}
           Custom packaging and branding play a significant role in consumer
@@ -305,9 +305,9 @@ export default function CustomPackagingAndBranding() {
           </div>
         </div>
       </div>
-      <div className={`${styles.introSection}`}>
+      <div className={`${styles.contrastSection}`}>
         <h2 style={{ paddingTop:"12px"}}>Key Takeaways</h2>
-        <p style={{ margin: "0 20%", padding: "20px 0" }}>
+        <p style={{ margin: "0 20%", padding: "12px 0" }}>
           {" "}
           Custom packaging and branding are vital to creating a strong
           connection between the brand and consumer. It helps with recognition,

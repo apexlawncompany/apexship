@@ -14,7 +14,10 @@
   flex: 1;
   position: relative;
 }
-
+.imageContainer img {
+  display: block;
+  line-height: 0;
+}
 .textContainer {
   flex: 1;
   padding: 20px;

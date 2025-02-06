@@ -3,7 +3,6 @@
 .parentBlock {
   background-color: #2b2b2b;
   color: white;
-  padding: 12px 0px;
 }
 
 .productSection {
@@ -18,8 +17,9 @@
   position: relative;
 }
 
-.image{
-  border-radius: 12px;
+.imageContainer img {
+  display: block;
+  line-height: 0;
 }
 
 .textContainer {

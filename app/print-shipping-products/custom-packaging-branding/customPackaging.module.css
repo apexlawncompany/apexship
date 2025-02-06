@@ -1,4 +1,4 @@
-.introSection {
+.contrastSection {
   background-color: black;
   color: white;
   text-align: center;
@@ -14,7 +14,10 @@
   flex: 1;
   position: relative;
 }
-
+.imageContainer img {
+  display: block;
+  line-height: 0;
+}
 .textContainer {
   flex: 1;
 }
@@ -30,5 +33,5 @@
   line-height: 1.3;
   text-align: left;
   font-weight: 200;
-  padding-left: 30px;
+  padding-left: 50px;
 }
