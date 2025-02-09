@@ -58,6 +58,10 @@ a {
   margin-right: max(5%, 12px);
 }
 
+.reverse {
+  flex-direction: row-reverse;
+}
+
 .heading-font {
   font-family: "Bungee", sans-serif;
   font-weight: 400;

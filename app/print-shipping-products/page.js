@@ -14,7 +14,7 @@ export default function PrintAndProducts() {
             <Image
               src="/assets/prints/brouchers-and-flyer.webp"
               alt="Flyers"
-              width={600}
+              width={630}
               height={300}
               className={styles.image}
             />
@@ -54,7 +54,7 @@ export default function PrintAndProducts() {
             <Image
               src="/assets/prints/poster.webp"
               alt="posters"
-              width={665}
+              width={634}
               height={300}
               className={styles.image}
             />
@@ -71,7 +71,7 @@ export default function PrintAndProducts() {
             <Image
               src="/assets/prints/custom-packaging.jpg"
               alt="Packages"
-              width={600}
+              width={630}
               height={300}
               className={styles.image}
             />

@@ -14,10 +14,12 @@
   flex: 1;
   position: relative;
 }
+
 .imageContainer img {
   display: block;
   line-height: 0;
 }
+
 .textContainer {
   flex: 1;
   padding: 20px;
@@ -30,11 +32,6 @@
   width: 55%;
   border-radius: 10px;
   background-color: #646464;
-}
-
-/* Reverse Layout for Odd Sections */
-.reverse {
-  flex-direction: row-reverse;
 }
 
 .subtitle {
@@ -50,4 +47,67 @@
   line-height: 1.3;
   text-align: left;
   font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .aboutCompany {
+    padding-top: 90px;
+  }
+
+  /* Stack Sections Vertically on Mobile */
+  .section1,
+  .section2,
+  .section3 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0px;
+  }
+
+  /* Make Images Full Width */
+  .imageContainer {
+    width: 100%;
+  }
+
+  .imageContainer img {
+    width: 100%;
+    height: 250px;
+    min-width: 100%;
+  }
+
+  /* Adjust Text Container */
+  .textContainer {
+    width: 100%;
+  }
+
+  /* Special Case: Ensure Section1 Text is Stacked */
+  .section1 .textContainer {
+    position: relative;
+    top: -50px;
+    width: 90%;
+    border-radius: 12px;
+    text-align: center;
+    background-color: #646464;
+  }
+
+  /* Center Align Text */
+  .subtitle,
+  .title,
+  .description {
+    text-align: left;
+  }
+
+  /* Adjust Font Sizes for Mobile */
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 1.4;
+  }
 }

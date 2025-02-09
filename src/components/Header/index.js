@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
 
@@ -132,7 +133,6 @@ export default function Header() {
         </nav>
       </header>
 
-      {/* Mini Header (Shown on Scroll) */}
       <div
         className={`${styles.miniHeader} ${isScrolled ? styles.visible : ""}`}
       >
@@ -195,6 +195,65 @@ export default function Header() {
             <Image src="/search.png" alt="Search" width={20} height={20} />
           </span>
         </div>
+      </div>
+
+      {/* Mobile Header */}
+      <header className={styles.mobileHeader}>
+        <div className={` ${styles.mobileContentHeader}`}>
+          <div
+            className={`${styles.hamburger} ${menuOpen ? styles.active : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div
+            className={styles.logoContainer}
+            onClick={() => router.push("/")}
+          >
+            <Image
+              src="/Apex Ship Logo2.png"
+              alt="ApexShip Logo"
+              width={50}
+              height={55}
+              className={styles.logo}
+            />
+          </div>
+
+          <span className={styles.searchIcon}>
+            <Image src="/search.png" alt="Search" width={18} height={18} />
+          </span>
+        </div>
+      </header>
+
+      {/* Mobile Menu */}
+      <div className={`${styles.mobileMenu} ${menuOpen ? styles.active : ""}`}>
+        <div className={styles.closeButton} onClick={() => setMenuOpen(false)}>
+          ✕
+        </div>
+
+        <nav className={styles.mobileNav}>
+          {AVAIL_SERVICES.map((service) => (
+            <Link
+              key={service.path}
+              href={service.path}
+              onClick={() => setMenuOpen(false)}
+            >
+              {service.text}
+            </Link>
+          ))}
+        </nav>
+
+        <Link href="/book-consult">
+          <button
+            className={styles.bookConsult}
+            onClick={() => setMenuOpen(false)}
+          >
+            Book Consult
+          </button>
+        </Link>
       </div>
     </>
   );
