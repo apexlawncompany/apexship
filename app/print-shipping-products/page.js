@@ -14,7 +14,7 @@ export default function PrintAndProducts() {
             <Image
               src="/assets/prints/brouchers-and-flyer.webp"
               alt="Flyers"
-              width={600}
+              width={630}
               height={300}
               className={styles.image}
             />
@@ -37,8 +37,17 @@ export default function PrintAndProducts() {
         {/* Posters & Vinyl Section */}
         <div
           id="posters-vinyl"
-          className={`margin-left ${styles.productSection}`}
+          className={`margin-left reverse ${styles.productSection}`}
         >
+          <div className={styles.imageContainer}>
+            <Image
+              src="/assets/prints/poster.webp"
+              alt="posters"
+              width={634}
+              height={300}
+              className={styles.image}
+            />
+          </div>
           <div className={styles.textContainer}>
             <h2 className={`heading-font ${styles.title}`}>POSTERS & VINYL</h2>
             <br />
@@ -50,17 +59,7 @@ export default function PrintAndProducts() {
               designed to catch the eye of your audience.
             </p>
           </div>
-          <div className={styles.imageContainer}>
-            <Image
-              src="/assets/prints/poster.webp"
-              alt="posters"
-              width={665}
-              height={300}
-              className={styles.image}
-            />
-          </div>
         </div>
-        {/* <hr style={{margin:"5px 0"}} /> */}
 
         {/* Custom Packing Section */}
         <div
@@ -71,7 +70,7 @@ export default function PrintAndProducts() {
             <Image
               src="/assets/prints/custom-packaging.jpg"
               alt="Packages"
-              width={600}
+              width={630}
               height={300}
               className={styles.image}
             />

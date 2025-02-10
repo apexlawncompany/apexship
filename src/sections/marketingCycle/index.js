@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function MarketingCycle() {
   return (
     <div className={`${styles.marketing}`}>
-      <div className={`page-margin`}>
+      <div className={`page-margin ${styles.content}`}>
         <h2 className={`heading-font margin-bottom`}>THE MARKETING CYCLE</h2>
 
         <div className={`margin-bottom ${styles.sectionContainer}`}>

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+
 .marketing {
   text-align: center;
   background-color: white;
@@ -19,7 +20,11 @@
 .section {
   width: 300px;
   text-align: center;
-  /* background: white; */
+}
+
+.content {
+  margin-left: max(5%, 12px);
+  margin-right: max(5%, 12px);
 }
 
 .imageContainer {
@@ -45,14 +50,51 @@
   padding: 0 10px;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
+/* ============================= */
+/* Responsive Styles for Mobile */
+/* ============================= */
+@media (max-width: 768px) {
+  .marketing {
+    padding: 20px 0px;
+  }
+
+  .marketing h2 {
+    font-size: 20px;
+  }
+
+  /* Stack Sections Vertically */
   .sectionContainer {
     flex-direction: column;
     align-items: center;
+    gap: 50px;
   }
 
   .section {
-    width: 90%;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .content {
+    margin: 0px 20px;
+  }
+
+  /* Make Images Fit the Screen */
+  .imageContainer {
+    width: 100%;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .title {
+    font-size: 23px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 1.4;
   }
 }

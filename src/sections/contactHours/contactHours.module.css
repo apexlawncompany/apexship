@@ -1,10 +1,9 @@
 .contactContainer {
   display: flex;
   justify-content: space-between;
-  /* align-items: start; */
   flex-wrap: wrap;
   gap: 20px;
-  padding : 30px 0px;
+  padding: 30px 0px;
 }
 
 .contactTitle {
@@ -17,7 +16,6 @@
 
 .mapContainer {
   width: 45%;
-  min-width: 300px;
 }
 
 .contactInfo {
@@ -27,6 +25,7 @@
   font-weight: 100;
   line-height: 1.3;
   color: rgb(128, 51, 0);
+  text-align: left; /* Ensures left alignment */
 }
 
 .contactInfo a {
@@ -39,30 +38,34 @@
 .contactInfo a:hover {
   text-decoration: underline;
 }
+
 .contactInfo a:visited {
   color: #7c4e9c;
 }
 
 .hours {
-  width: 25%;
-  min-width: 200px;
-  font-size: 16px;
-  font-weight: 100;
   line-height: 1.4;
-  color: rgb(128, 51, 0);
   padding-top: 55px;
 }
 
+/* ============================= */
+/* Responsive Styles for Mobile */
+/* ============================= */
 @media (max-width: 768px) {
   .contactContainer {
     flex-direction: column;
-    align-items: center;
+    /* align-items: flex-start; */
+    margin: 0px 20px; /* Aligns everything to the left */
   }
 
   .mapContainer,
   .contactInfo,
   .hours {
     width: 100%;
-    text-align: center;
+    text-align: left;
+  }
+
+  .hours {
+    padding-top: 0px;
   }
 }

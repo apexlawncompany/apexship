@@ -1,7 +1,11 @@
 .footer {
   color: white;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center; /* Center everything */
+  align-items: center; /* Align vertically */
+  flex-direction: column;
+  text-align: center;
+  padding: 20px 0;
 }
 
 .container {
@@ -105,4 +109,77 @@
   align-self: flex-end;
   font-size: 14px;
   margin-top: min(5%, 20px);
+}
+
+/* ============================= */
+/* Responsive Styles for Mobile */
+/* ============================= */
+
+@media (max-width: 768px) {
+  .footer {
+    margin: 0px 20px;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .container {
+    align-items: center;
+  }
+
+  .content,
+  .newsletter {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .emailForm {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .emailForm input {
+    flex: 1;
+    padding: min(5%, 12px);
+    font-size: 16px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+  }
+
+  .emailForm button {
+    background-color: #b54e00;
+    color: white;
+    border: none;
+    padding: min(5%, 12px) min(5%, 20px);
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: auto;
+  }
+
+  .emailForm button:hover {
+    background-color: #933b00;
+    border-radius: 0 25px 25px 0;
+  }
+
+  .navLinks {
+    display: grid;
+  }
+
+  .newsletter p {
+    font-size: 13px;
+    margin-top: min(5%, 10px);
+    color: #ccc;
+    text-align: center;
+  }
+
+  .newsletter p a {
+    text-decoration: underline;
+  }
+
+  .copyright {
+    align-self: center;
+    font-size: 14px;
+    margin-top: min(5%, 20px);
+  }
 }

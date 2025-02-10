@@ -31,7 +31,16 @@ export default function AboutCompany() {
       </div>
 
       {/* Second Section */}
-      <div className={`margin-left ${styles.section2}`}>
+      <div className={`margin-left reverse ${styles.section2}`}>
+        <div className={styles.imageContainer}>
+          <Image
+            src="/assets/home/source_locally.jpg"
+            alt="Products"
+            width={650}
+            height={325}
+            className={styles.image}
+          />
+        </div>
         <div className={styles.textContainer}>
           <h3 className={`heading-font ${styles.subtitle}`}>SOURCED LOCALLY</h3>
           <br />
@@ -46,19 +55,19 @@ export default function AboutCompany() {
             and lasting impression.
           </p>
         </div>
+      </div>
+
+      {/* Third Section */}
+      <div className={`margin-right ${styles.section3}`}>
         <div className={styles.imageContainer}>
           <Image
-            src="/assets/home/source_locally.jpg"
-            alt="Products"
-            width={650}
+            src="/assets/home/shipping.webp"
+            alt="Shipping & Courier"
+            width={615}
             height={325}
             className={styles.image}
           />
         </div>
-      </div>
-
-      {/* Third Section */}
-      <div className={`margin-right ${styles.section3} ${styles.reverse}`}>
         <div className={styles.textContainer}>
           <h3 className={`heading-font ${styles.subtitle}`}>
             CATERED TO YOUR BUSINESS
@@ -73,15 +82,6 @@ export default function AboutCompany() {
             on a schedule. Our storefront is open 8am-7pm Mon-Sat to pickup and
             receive deliveries and offer virtual addresses.
           </p>
-        </div>
-        <div className={styles.imageContainer}>
-          <Image
-            src="/assets/home/shipping.webp"
-            alt="Shipping & Courier"
-            width={615}
-            height={325}
-            className={styles.image}
-          />
         </div>
       </div>
     </div>
