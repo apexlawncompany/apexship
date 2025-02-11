@@ -118,7 +118,11 @@ export default function Header() {
                 className={styles.searchInput}
               />
               <button
-                onClick={() => setSearchActive(false)}
+                onClick={() => {
+                  setSearchActive(false);
+                  setSearchTerm("");
+                  setSearchResults([]);
+                }}
                 className={styles.searchClose}
               >
                 <X size={24} />
@@ -322,7 +326,11 @@ export default function Header() {
                 className={styles.searchInput}
               />
               <button
-                onClick={() => setSearchActive(false)}
+                onClick={() => {
+                  setSearchActive(false);
+                  setSearchTerm("");
+                  setSearchResults([]);
+                }}
                 className={styles.searchClose}
               >
                 <X size={24} />
