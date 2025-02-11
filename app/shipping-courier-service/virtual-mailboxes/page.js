@@ -4,9 +4,6 @@ import styles from "../shipping&courier.module.css";
 export default function VirtualMailBox() {
   return (
     <div className={`${styles.header}`} style={{ padding: "10px 0px" }}>
-      <div className={styles.links}>
-        <SideBar />
-      </div>
       <div className={styles.content}>
         <h2 className={`heading-font`}>Virtual Address & Mailboxes</h2>
         <br />

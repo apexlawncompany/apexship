@@ -3,10 +3,28 @@ import Image from "next/image";
 
 export default function CustomPackagingAndBranding() {
   return (
-    <>
-      <div className={`${styles.contrastSection}`}>
-        <p style={{ margin: "0 20%", padding: "20px 0" }}>
-          {" "}
+    <div>
+      <div className={`${styles.topSection}`}>
+        <div className={`${styles.cutoutSection}`}>
+          <div className={`${styles.cutoutContent}`}>
+            <h2 className={`heading-font`}>Why Apex is Different</h2>
+            <p>
+              When we claim a product is MADE IN USA, we use locally sourced
+              vendors and sustainable products made in America from American
+              Materials and by American Workers.
+            </p>
+            <p>
+              Our international and imported products are selected with care and
+              held to the highest industry standards for both quality and labor
+              practices.
+            </p>
+            <p>
+              Quality and ethical products aren’t a sales pitch, they’re an
+              expectation.
+            </p>
+          </div>
+        </div>
+        <p  className={`${styles.headingPara}`}>
           Custom packaging and branding play a significant role in consumer
           decision-making, influencing both perceptions and purchasing behavior.
           Here are several data-driven reasons why these factors are crucial for
@@ -26,7 +44,9 @@ export default function CustomPackagingAndBranding() {
               />
             </div>
             <div className={`${styles.textContainer}`}>
-              <h2 className={`heading-font`}>1. First Impressions Matter</h2>
+              <h2 className={`heading-font ${styles.title}`}>
+                1. First Impressions Matter
+              </h2>
               <br />
               <ul className={styles.description}>
                 <li>
@@ -57,7 +77,9 @@ export default function CustomPackagingAndBranding() {
               />
             </div>
             <div className={styles.textContainer}>
-              <h2 className={`heading-font`}>2. Brand Recognition</h2>
+              <h2 className={`heading-font ${styles.title}`}>
+                2. Brand Recognition
+              </h2>
               <br />
               <ul className={styles.description}>
                 <li>
@@ -85,7 +107,9 @@ export default function CustomPackagingAndBranding() {
               />
             </div>
             <div className={styles.textContainer}>
-              <h2 className={`heading-font`}>3. Emotional Connection</h2>
+              <h2 className={`heading-font ${styles.title}`}>
+                3. Emotional Connection
+              </h2>
               <br />
               <ul className={styles.description}>
                 <li>
@@ -112,7 +136,9 @@ export default function CustomPackagingAndBranding() {
               />
             </div>
             <div className={styles.textContainer}>
-              <h2 className={`heading-font`}>4. Perceived Value</h2>
+              <h2 className={`heading-font ${styles.title}`}>
+                4. Perceived Value
+              </h2>
               <br />
               <ul className={styles.description}>
                 <li>
@@ -140,7 +166,9 @@ export default function CustomPackagingAndBranding() {
               />
             </div>
             <div className={styles.textContainer}>
-              <h2 className={`heading-font`}>5. Sustainability Matters</h2>
+              <h2 className={`heading-font ${styles.title}`}>
+                5. Sustainability Matters
+              </h2>
               <br />
               <ul className={styles.description}>
                 <li>
@@ -168,7 +196,7 @@ export default function CustomPackagingAndBranding() {
               />
             </div>
             <div className={styles.textContainer}>
-              <h2 className={`heading-font`}>
+              <h2 className={`heading-font ${styles.title}`}>
                 6. Shareability and Social Media
               </h2>
               <br />
@@ -199,7 +227,7 @@ export default function CustomPackagingAndBranding() {
               />
             </div>
             <div className={styles.textContainer}>
-              <h2 className={`heading-font`}>
+              <h2 className={`heading-font ${styles.title}`}>
                 7. Increased Customer Satisfaction
               </h2>
               <br />
@@ -228,7 +256,7 @@ export default function CustomPackagingAndBranding() {
               />
             </div>
             <div className={styles.textContainer}>
-              <h2 className={`heading-font`}>
+              <h2 className={`heading-font ${styles.title}`}>
                 8. Differentiation in Competitive Markets
               </h2>
               <br />
@@ -258,7 +286,7 @@ export default function CustomPackagingAndBranding() {
               />
             </div>
             <div className={styles.textContainer}>
-              <h2 className={`heading-font`}>
+              <h2 className={`heading-font ${styles.title}`}>
                 9. Enhancing Customer Experience
               </h2>
               <br />
@@ -287,7 +315,9 @@ export default function CustomPackagingAndBranding() {
               />
             </div>
             <div className={styles.textContainer}>
-              <h2 className={`heading-font`}>10. Trust and Transparency</h2>
+              <h2 className={`heading-font ${styles.title}`}>
+                10. Trust and Transparency
+              </h2>
               <br />
               <ul className={styles.description}>
                 <li>
@@ -306,8 +336,8 @@ export default function CustomPackagingAndBranding() {
         </div>
       </div>
       <div className={`${styles.contrastSection}`}>
-        <h2 style={{ paddingTop: "12px" }}>Key Takeaways</h2>
-        <p style={{ margin: "0 20%", padding: "12px 0" }}>
+        <h2>Key Takeaways</h2>
+        <p>
           {" "}
           Custom packaging and branding are vital to creating a strong
           connection between the brand and consumer. It helps with recognition,
@@ -321,6 +351,6 @@ export default function CustomPackagingAndBranding() {
           values and expectations.
         </p>
       </div>
-    </>
+    </div>
   );
 }

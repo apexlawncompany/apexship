@@ -4,9 +4,6 @@ import styles from "../print&products.module.css";
 export default function PostersVinyl() {
   return (
     <div className={`${styles.header}`} style={{ padding: "10px 0px" }}>
-      <div className={styles.links}>
-        <SideBar />
-      </div>
       <div className={styles.content}>
         <h2 className={`heading-font`}>PostersVinyl</h2>
         <br />

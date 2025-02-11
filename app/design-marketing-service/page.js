@@ -4,15 +4,15 @@ import Image from "next/image";
 
 export default function DesignAndMarketing() {
   return (
-    <div className={`${styles.header}`}>
-      <div className={`page-margin margin-top margin-bottom ${styles.content}`}>
+    <div className={`${styles.parentBlock}`}>
+      <div className={`${styles.content}`}>
         {/* AdvertiseSection */}
-        <div className={styles.productSection}>
+        <div className={`margin-right ${styles.productSection}`}>
           <div className={styles.imageContainer}>
             <Image
               src="/assets/design/advertise.jpg"
               alt="Advertises"
-              width={550}
+              width={630}
               height={300}
               className={styles.image}
             />
@@ -29,7 +29,16 @@ export default function DesignAndMarketing() {
         </div>
 
         {/* Graphic Design Section */}
-        <div className={styles.productSection}>
+        <div className={`margin-left reverse ${styles.productSection}`}>
+          <div className={styles.imageContainer}>
+            <Image
+              src="/assets/design/graphic_design.jpg"
+              alt="Graphic design"
+              width={634}
+              height={300}
+              className={styles.image}
+            />
+          </div>
           <div className={styles.textContainer}>
             <h2 className={`heading-font ${styles.title}`}>GRAPHIC DESIGN</h2>
             <br />
@@ -39,24 +48,14 @@ export default function DesignAndMarketing() {
               business identity.
             </p>
           </div>
-          <div className={styles.imageContainer}>
-            <Image
-              src="/assets/design/graphic_design.jpg"
-              alt="Graphic design"
-              width={600}
-              height={300}
-              className={styles.image}
-            />
-          </div>
         </div>
 
-        {/* Custom Packing Section */}
-        <div className={styles.productSection}>
+        <div className={`margin-right ${styles.productSection}`}>
           <div className={styles.imageContainer}>
             <Image
               src="/assets/design/Web-App-Development.jpg"
               alt="Development"
-              width={550}
+              width={630}
               height={300}
               className={styles.image}
             />

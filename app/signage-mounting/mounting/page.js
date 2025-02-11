@@ -4,9 +4,6 @@ import styles from "../signage&mounting.module.css";
 export default function Mounting() {
   return (
     <div className={`${styles.header}`} style={{ padding: "10px 0px" }}>
-      <div className={styles.links}>
-        <SideBar />
-      </div>
       <div className={styles.content}>
         <h2 className={`heading-font`}>Mounting</h2>
         <br />

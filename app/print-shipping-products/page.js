@@ -33,7 +33,7 @@ export default function PrintAndProducts() {
             </p>
           </div>
         </div>
-        {/* <hr style={{margin:"5px 0"}} /> */}
+
         {/* Posters & Vinyl Section */}
         <div
           id="posters-vinyl"

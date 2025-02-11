@@ -39,9 +39,9 @@
 }
 
 @media (max-width: 768px) {
-  .parentBlock {
+  /* .parentBlock {
     padding-top: 90px;
-  }
+  } */
   .productSection {
     flex-direction: column; /* Stack items vertically */
     align-items: center;
@@ -50,7 +50,7 @@
   }
 
   .imageContainer {
-    width: 100%; /* Make image full width */
+    width: 100%;
   }
 
   .imageContainer img {
