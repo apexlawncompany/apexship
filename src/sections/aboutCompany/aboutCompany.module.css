@@ -50,11 +50,6 @@
 }
 
 @media (max-width: 768px) {
-  .aboutCompany {
-    padding-top: 90px;
-  }
-
-  /* Stack Sections Vertically on Mobile */
   .section1,
   .section2,
   .section3 {

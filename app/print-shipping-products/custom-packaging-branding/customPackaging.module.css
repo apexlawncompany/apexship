@@ -1,37 +1,167 @@
+.topSection {
+  position: relative;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding: 105px 0;
+}
+
+.cutoutSection {
+  position: absolute;
+  top: 7px;
+  right: 5%;
+  width: 33%;
+  min-width: 3in;
+  height: 95%;
+  background-color: #646464;
+  z-index: 1;
+  border-radius: 24px;
+}
+
+.cutoutContent {
+  position: absolute;
+  color: white;
+  padding: 20px;
+}
+
+.cutoutContent h2 {
+  text-align: center;
+  font-size: 24px;
+}
+
+.cutoutContent p {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.headingPara {
+  margin-right: 500px;
+  margin-left: 5%;
+}
+
+.contrastSection h2 {
+  padding-top: 12px;
+}
+
+.contrastSection p {
+  margin: 0px 20%;
+  padding: 12px 0px;
+}
+
 .contrastSection {
-    background-color: black;
-    color: white;
-    text-align: center;
-    font-size: 20px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
+
+.content {
+  display: flex;
+  color: white;
+}
+
+.imageContainer {
+  flex: 1;
+  position: relative;
+}
+
+.imageContainer img {
+  display: block;
+  line-height: 0;
+}
+
+.textContainer {
+  flex: 1;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.3;
+  text-align: left;
+  font-weight: 200;
+  padding-left: 50px;
+}
+
+@media (max-width: 768px) {
+  .topSection {
+    font-size: 16px;
+    padding-top: 24px;
+    padding-bottom: 410px;
   }
-  
-  .content {
-    display: flex;
-    color: white;
+  .cutoutSection {
+    position: absolute;
+    top: 28%; 
+    left: 50%; 
+    width: 90%; 
+    height: auto; 
+    transform: translateX(-50%);
+    border-radius: 24px;
   }
-  
-  .imageContainer {
-    flex: 1;
+  .cutoutContent {
     position: relative;
+    padding: 20px;
   }
-  .imageContainer img {
-    display: block;
-    line-height: 0;
+  .cutoutContent h2 {
+    font-size: 18px;
   }
-  .textContainer {
-    flex: 1;
+  .headingPara {
+    margin: 0;
+    padding: 0 20px;
   }
-  
-  .steps {
-    display: flex;
-    justify-content: space-between;
+  .contrastSection {
+    padding: 20px;
+    font-size: 16px;
+  }
+  .contrastSection h2 {
+    padding-top: 0px;
+  }
+  .contrastSection p {
+    margin: 0;
+    text-align: left;
+  }
+  .content {
+    margin: 0;
+    flex-direction: column; /* Stack elements vertically */
     align-items: center;
   }
-  
-  .description {
-    font-size: 16px;
-    line-height: 1.3;
-    text-align: left;
-    font-weight: 200;
-    padding-left: 50px;
+
+  .imageContainer {
+    width: 100%;
   }
+
+  .imageContainer img {
+    width: 100%;
+    height: 250px;
+    min-width: 100%;
+  }
+
+  .textContainer {
+    padding: 20px;
+    flex: 1;
+    width: 100%;
+  }
+
+  .steps {
+    display: flex;
+    flex-direction: column; /* Stack steps vertically */
+    align-items: center;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 16px; 
+    line-height: 1.4;
+    text-align: left;
+    margin-top: 10px; 
+  }
+}

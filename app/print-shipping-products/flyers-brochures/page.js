@@ -4,9 +4,6 @@ import styles from "../print&products.module.css";
 export default function FlyersBrochures() {
   return (
     <div className={`${styles.header}`} style={{ padding: "10px 0px" }}>
-      <div className={styles.links}>
-        <SideBar />
-      </div>
       <div className={styles.content}>
         <h2 className={`heading-font`}>Flyers & Brochures</h2>
         <br />
