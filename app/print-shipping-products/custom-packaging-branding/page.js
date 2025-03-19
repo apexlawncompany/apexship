@@ -4,12 +4,19 @@ import Image from "next/image";
 export default function CustomPackagingAndBranding() {
   return (
     <div>
-      <div className={`${styles.topSection}`}>
+      <div
+        className={`${styles.topSection}`}
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), transparent),url('/assets/prints/customPackage/warehouse.jpg')`,
+        }}
+      >
         <div className={`${styles.cutoutSection}`}>
           <div className={`${styles.cutoutContent}`}>
             <h2 className={`heading-font`}>Why Apex is Different</h2>
             <p>
-              When we claim a product is MADE IN USA, we use locally sourced
+              When we claim a product is{" "}
+              <span style={{ color: "red" }}>MADE</span> IN{" "}
+              <span style={{ color: "blue" }}>USA</span>, we use locally sourced
               vendors and sustainable products made in America from American
               Materials and by American Workers.
             </p>
@@ -18,13 +25,13 @@ export default function CustomPackagingAndBranding() {
               held to the highest industry standards for both quality and labor
               practices.
             </p>
-            <p>
+            {/* <p>
               Quality and ethical products aren’t a sales pitch, they’re an
               expectation.
-            </p>
+            </p> */}
           </div>
         </div>
-        <p  className={`${styles.headingPara}`}>
+        <p className={`${styles.headingPara}`}>
           Custom packaging and branding play a significant role in consumer
           decision-making, influencing both perceptions and purchasing behavior.
           Here are several data-driven reasons why these factors are crucial for
