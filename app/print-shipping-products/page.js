@@ -5,15 +5,15 @@ export default function PrintAndProducts() {
   return (
     <div className={`${styles.parentBlock}`}>
       <div className={`${styles.content}`}>
-        {/* Flyers & Brochures Section */}
+        {/* Custom Packing Section */}
         <div
-          id="flyers-brochures"
+          id="custom-package"
           className={`margin-right ${styles.productSection}`}
         >
           <div className={styles.imageContainer}>
             <Image
-              src="/assets/prints/brouchers-and-flyer.webp"
-              alt="Flyers"
+              src="/assets/prints/custom-packaging.jpg"
+              alt="Packages"
               width={630}
               height={300}
               className={styles.image}
@@ -21,15 +21,15 @@ export default function PrintAndProducts() {
           </div>
           <div className={styles.textContainer}>
             <h2 className={`heading-font ${styles.title}`}>
-              FLYRES & BROCHURES
+              CUSTOM PACKAGING & BRANDING
             </h2>
             <br />
             <p className={styles.description}>
-              Get high-quality flyers and brochures to help spread the word
-              about your business. Available in various sizes and finishes, our
-              printed materials will ensure your message stands out. Whether
-              you're promoting an event, a sale, or your brand, we've got the
-              perfect options for you.
+              Need personalized packing materials? We offer custom packaging
+              solutions to keep your products safe during shipping. From custom
+              boxes to branded packing tape, we can design packaging that
+              represents your brand and provides extra protection for your
+              goods.
             </p>
           </div>
         </div>
@@ -61,15 +61,15 @@ export default function PrintAndProducts() {
           </div>
         </div>
 
-        {/* Custom Packing Section */}
+        {/* Flyers & Brochures Section */}
         <div
-          id="custom-package"
+          id="flyers-brochures"
           className={`margin-right ${styles.productSection}`}
         >
           <div className={styles.imageContainer}>
             <Image
-              src="/assets/prints/custom-packaging.jpg"
-              alt="Packages"
+              src="/assets/prints/brouchers-and-flyer.webp"
+              alt="Flyers"
               width={630}
               height={300}
               className={styles.image}
@@ -77,15 +77,15 @@ export default function PrintAndProducts() {
           </div>
           <div className={styles.textContainer}>
             <h2 className={`heading-font ${styles.title}`}>
-              CUSTOM PACKAGING & BRANDING
+              FLYRES & BROCHURES
             </h2>
             <br />
             <p className={styles.description}>
-              Need personalized packing materials? We offer custom packaging
-              solutions to keep your products safe during shipping. From custom
-              boxes to branded packing tape, we can design packaging that
-              represents your brand and provides extra protection for your
-              goods.
+              Get high-quality flyers and brochures to help spread the word
+              about your business. Available in various sizes and finishes, our
+              printed materials will ensure your message stands out. Whether
+              you're promoting an event, a sale, or your brand, we've got the
+              perfect options for you.
             </p>
           </div>
         </div>

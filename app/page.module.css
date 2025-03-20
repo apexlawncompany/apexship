@@ -161,6 +161,16 @@ a.secondary {
   }
 }
 
+.rightSection {
+  display: none; /* Hide ContactHours below 1000px */
+}
+
+@media (max-width: 1000px) {
+  .rightSection {
+    display: block;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   .logo {
     filter: invert();

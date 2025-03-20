@@ -1,4 +1,4 @@
-import styles from "./page.module.css"
+import styles from "./page.module.css";
 import AboutCompany from "@/src/sections/aboutCompany";
 import ContactHours from "@/src/sections/contactHours";
 import MarketingCycle from "@/src/sections/marketingCycle";
@@ -8,7 +8,9 @@ export default function Home() {
     <main className={styles.main}>
       <AboutCompany />
       <MarketingCycle />
-      <ContactHours />
+      <div className={styles.rightSection}>
+        <ContactHours />
+      </div>
     </main>
   );
 }

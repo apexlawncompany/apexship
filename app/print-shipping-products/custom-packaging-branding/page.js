@@ -7,7 +7,7 @@ export default function CustomPackagingAndBranding() {
       <div
         className={`${styles.topSection}`}
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), transparent),url('/assets/prints/customPackage/warehouse.jpg')`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), transparent),url('/assets/prints/customPackage/packing1.jpg')`,
         }}
       >
         <div className={`${styles.cutoutSection}`}>
