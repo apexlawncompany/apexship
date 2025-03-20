@@ -304,7 +304,7 @@ export default function Header() {
               {/* <button className={styles.button}>Book Consult</button> */}
               <span className={styles.bookConsultIconWrapper}>
                 <Image
-                  src="/bookconsult.png"
+                  src="/bookConsult.png"
                   alt="Book Consult"
                   width={20}
                   height={20}
