@@ -51,7 +51,7 @@
 /* ============================= */
 /* Responsive Styles for Mobile */
 /* ============================= */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .contactContainer {
     flex-direction: column;
     /* align-items: flex-start; */

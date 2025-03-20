@@ -42,7 +42,7 @@ export default function ContactHours() {
           </p>
         </div>
 
-        <div className={styles.hours}>
+        {/* <div className={styles.hours}>
           <p>Monday 09:00 am - 05:00 pm</p>
           <p>Tuesday 09:00 am - 05:00 pm</p>
           <p>Wednesday 09:00 am - 05:00 pm</p>
@@ -50,7 +50,7 @@ export default function ContactHours() {
           <p>Friday 09:00 am - 05:00 pm</p>
           <p>Saturday 09:00 am - 05:00 pm</p>
           <p>Sunday Closed</p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -13,7 +13,20 @@
   display: flex;
   flex-direction: column;
 }
+.flexContainer {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
 
+.leftSection,
+.rightSection {
+  flex: 1;
+}
+
+.rightSection {
+  padding-left: 20px;
+}
 .content {
   max-width: 50%;
   display: flex;
@@ -52,7 +65,7 @@
 }
 
 .newsletter {
-  max-width: 50%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Align all left */
@@ -181,5 +194,15 @@
     align-self: center;
     font-size: 14px;
     margin-top: min(5%, 20px);
+  }
+}
+
+@media (max-width: 1000px) {
+  .rightSection {
+    display: none; /* Hide ContactHours below 1000px */
+  }
+
+  .leftSection {
+    max-width: 100%; /* Ensure the left section takes full width */
   }
 }
