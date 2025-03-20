@@ -162,6 +162,7 @@ a.secondary {
 }
 
 .rightSection {
+  width: 100%;
   display: none; /* Hide ContactHours below 1000px */
 }
 
