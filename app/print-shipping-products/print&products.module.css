@@ -13,7 +13,7 @@
 }
 
 .imageContainer {
-  flex: 1;
+  /* flex: 1; */
   position: relative;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .textContainer {
-  flex: 1;
+  /* flex: 1; */
   padding: 20px;
 }
 
@@ -75,5 +75,31 @@
   .description {
     font-size: 16px;
     line-height: 1.4;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  .imageContainer {
+    width: 56%;
+    margin: 0;
+  }
+
+  .imageContainer img {
+    width: 100%;
+    /* height: auto; */
+    /* object-fit: fill; */
+  }
+
+  .textContainer {
+    width: 50%;
+    padding: 13px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 14px;
   }
 }

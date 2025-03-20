@@ -4,6 +4,7 @@
   text-align: center;
   background-color: white;
   padding-top: 20px;
+  width: 100%;
 }
 
 .marketing h2 {
@@ -78,7 +79,6 @@
     margin: 0px 20px;
   }
 
-  /* Make Images Fit the Screen */
   .imageContainer {
     width: 100%;
   }
@@ -96,5 +96,42 @@
   .description {
     font-size: 16px;
     line-height: 1.4;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  .marketing {
+    padding: 30px 0px;
+  }
+
+  .marketing h2 {
+    font-size: 24px; 
+  }
+
+  .sectionContainer {
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
+
+  .section {
+    width: 45%;
+    text-align: center;
+  }
+
+  .image {
+    width: 100%; 
+    max-width: 100%; /* Ensure image does not exceed container width */
+    border-radius: 10px; 
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 10px; 
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 0 15px;
   }
 }

@@ -2,7 +2,7 @@ import styles from "../contactHours/contactHours.module.css";
 
 export default function ContactHours() {
   return (
-    <div style={{ backgroundColor: "#f6f2ef" }}>
+    <div style={{ backgroundColor: "beige", width: "100%" }}>
       <div className={`page-margin ${styles.contactContainer}`}>
         <div className={styles.mapContainer}>
           {/* Updated Google Map Embed */}
@@ -20,14 +20,14 @@ export default function ContactHours() {
           <h2 className={`heading-font ${styles.contactTitle}`}>
             CONTACT & HOURS
           </h2>
-          <p>Square Inc</p>
-          <p>Market Street</p>
-          <p>San Francisco, 94103</p>
+          <p>Apex Ship Headquarters</p>
+          <p>4534 NC 87 S</p>
+          <p>Sanford, NC 27332</p>
           <p>
-            <a href="tel:+15555555555">(555) 555-5555</a>
+            <a href="tel:+15555555555">(919) 939-4665</a>
           </p>
           <p>
-            <a href="mailto:hi@mystore.com">hi@mystore.com</a>
+            <a href="mailto:hi@mystore.com">Client@apexship.net</a>
           </p>
           <br />
           {/* Updated "Get Directions" Link */}

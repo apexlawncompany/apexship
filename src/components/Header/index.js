@@ -277,7 +277,11 @@ export default function Header() {
                     animate={{ opacity: 1, width: "auto" }}
                     transition={{ duration: 1.5, delay: index * 0.2 }}
                   >
-                    <Link href={sub.path}>{sub.text}</Link>
+                    <Link href={sub.path}>
+                      {sub?.text === "Custom Packaging & Branding"
+                        ? "Packaging & Branding"
+                        : sub.text}
+                    </Link>
                   </motion.div>
                 ))}
               </>
@@ -297,7 +301,19 @@ export default function Header() {
 
           <div className={styles.actions}>
             <Link href="/book-consult">
-              <button className={styles.button}>Book Consult</button>
+              {/* <button className={styles.button}>Book Consult</button> */}
+              <span className={styles.bookConsultIconWrapper}>
+                <Image
+                  src="/bookconsult.png"
+                  alt="Book Consult"
+                  width={20}
+                  height={20}
+                  className={styles.bookConsultIcon}
+                />
+                <span className={styles.bookConsultHoverText}>
+                  Book Consult
+                </span>
+              </span>
             </Link>
             <span
               className={styles.searchIcon}
