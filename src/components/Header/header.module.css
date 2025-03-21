@@ -54,29 +54,8 @@
   color: black;
 }
 
-.bookConsultHoverText {
-  visibility: hidden;
-  opacity: 0;
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #000;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 12px;
-  white-space: nowrap;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.bookConsultIconWrapper:hover .bookConsultHoverText {
-  visibility: visible;
-  opacity: 1;
-}
-
-.searchIcon,
-.bookConsultIconWrapper {
+/* Adjust the search icon */
+.searchIcon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -362,11 +341,27 @@
 .dropdownToggle:hover {
   background: #444;
 }
+.mainServiceLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.serviceText {
+  flex-grow: 1;
+}
+
+.chevronIcon {
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
 
 .subMenu {
   display: flex;
   flex-direction: column;
-  background: #222;
+  border: none;
   transition: all 0.3s ease-in-out;
 }
 
@@ -374,6 +369,7 @@
   font-size: 14px;
   color: white;
   padding: 8px 0;
+  border:none;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -384,8 +380,9 @@
 
 /* Book Consult Button */
 .bookConsult {
+  width: 100%;
   margin-top: 20px;
-  padding: 8px 16px;
+  padding: 8px 110px;
   border: 2px solid white;
   border-radius: 35px;
   background: transparent;

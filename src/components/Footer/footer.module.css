@@ -19,12 +19,12 @@
   width: 100%;
 }
 
-.leftSection,
-.rightSection {
+.stayInLoopSection,
+.contactHoursSection {
   flex: 1;
 }
 
-.rightSection {
+.contactHoursSection {
   padding-left: 20px;
 }
 .content {
@@ -90,9 +90,9 @@
 
 .emailForm button {
   position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  right: 1px;
+  top: 1px;
+  bottom: 1px;
   background-color: #b54e00;
   color: white;
   border: none;
@@ -119,7 +119,10 @@
 }
 
 .copyright {
-  align-self: flex-end;
+  display: flex; 
+  justify-content: flex-end; 
+  align-items: center; 
+  gap: 10px;
   font-size: 14px;
   margin-top: min(5%, 20px);
 }
@@ -198,11 +201,11 @@
 }
 
 @media (max-width: 1000px) {
-  .rightSection {
+  .contactHoursSection {
     display: none; /* Hide ContactHours below 1000px */
   }
 
-  .leftSection {
+  .stayInLoopSection {
     max-width: 100%; /* Ensure the left section takes full width */
   }
 }

@@ -1,0 +1,90 @@
+.policy {
+  font-size: 48px;
+}
+.policyPage {
+  background-color: white;
+}
+
+.license-row {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  gap: 20px;
+}
+
+.license-row .heading {
+  padding: 3rem 0;
+  font-size: 48px;
+  font-weight: bold;
+  flex: 1;
+}
+
+.license-row .separator {
+  width: 1px;
+  background-color: black;
+  margin: 0 20px;
+  align-self: stretch;
+}
+
+.license-row .text {
+  text-align: left;
+  font-size: 1em;
+  line-height: 1.5;
+  flex: 2;
+}
+
+.text a {
+  color: rgb(26, 18, 165);
+}
+
+.text p {
+  margin: 2.5em 0;
+}
+
+@media (max-width: 1024px) {
+  .divider {
+    margin: 5px 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .policy {
+    font-size: 45px;
+  }
+}
+@media (min-width: 550px) and (max-width: 768px) {
+  .policy {
+    font-size: 35px;
+  }
+}
+@media (min-width: 425px) and (max-width: 550px) {
+  .policy {
+    font-size: 24px;
+  }
+  .license-row {
+    margin: 10px 0;
+    gap: 0px;
+  }
+  .license-row .heading {
+    padding: 1.5rem 0;
+    font-size: 24px;
+  }
+  .text p {
+    margin: 1em 0;
+  }
+}
+@media (min-width: 320px) and (max-width: 424px) {
+  .policy {
+    font-size: 17px;
+  }
+  .license-row {
+    margin: 10px 0;
+    gap: 0px;
+  }
+  .license-row .heading {
+    padding: 1rem 0;
+    font-size: 17px;
+  }
+  .text p {
+    margin: 0.5em 0;
+  }
+}
