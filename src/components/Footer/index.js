@@ -1,5 +1,6 @@
 import styles from "./footer.module.css";
 import ContactHours from "../../sections/contactHours";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.flexContainer}>
           {/* Left Section: Existing Content */}
-          <div className={styles.leftSection}>
+          <div className={styles.stayInLoopSection}>
             <div className={styles.content}>
               <h2 className={`heading-font ${styles.logo}`}>APEX SHIP LLC</h2>
 
@@ -30,7 +31,6 @@ export default function Footer() {
               </div>
               <p>
                 This form is protected by reCAPTCHA and the Google{" "}
-                <a href="https://policies.google.com/privacy">Privacy Policy</a> and{" "}
                 <a href="https://policies.google.com/terms">Terms of Service</a>{" "}
                 apply.
               </p>
@@ -38,12 +38,14 @@ export default function Footer() {
           </div>
 
           {/* Right Section: Contact Hours */}
-          <div className={styles.rightSection}>
+          <div className={styles.contactHoursSection}>
             <ContactHours />
           </div>
         </div>
-
-        <p className={styles.copyright}>© 2025</p>
+        <div className={styles.copyright}>
+        <Link href="/policy">Policy</Link>
+        <p >© 2025</p>
+        </div>
       </div>
     </div>
   );

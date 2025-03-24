@@ -161,13 +161,13 @@ a.secondary {
   }
 }
 
-.rightSection {
+.contactHoursSection {
   width: 100%;
   display: none; /* Hide ContactHours below 1000px */
 }
 
 @media (max-width: 1000px) {
-  .rightSection {
+  .contactHoursSection {
     display: block;
   }
 }

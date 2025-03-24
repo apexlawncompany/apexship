@@ -8,7 +8,7 @@ export default function Home() {
     <main className={styles.main}>
       <AboutCompany />
       <MarketingCycle />
-      <div className={styles.rightSection}>
+      <div className={styles.contactHoursSection}>
         <ContactHours />
       </div>
     </main>
