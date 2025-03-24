@@ -1,24 +1,58 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import AVAIL_SERVICES from "@/src/data/availableServices";
 import styles from "../Header/header.module.css";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false); // State to toggle search
+  const [searchQuery, setSearchQuery] = useState(""); // State for search input
+  const [suggestions, setSuggestions] = useState([]); // State for search suggestions
+  const searchInputRef = useRef(null); // Focus Cursor in search input
+
   const router = useRouter();
   const pathname = usePathname();
 
   const handleLogoClick = () => {
     router.push("/");
   };
+
+  const handleSearchChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+
+    // Filter available services based on the query
+    if (query.trim() === "") {
+      setSuggestions([]);
+    } else {
+      const filteredServices = AVAIL_SERVICES.filter((service) =>
+        service.text.toLowerCase().includes(query.toLowerCase())
+      );
+      setSuggestions(
+        filteredServices.length > 0 ? filteredServices : ["No results found"]
+      );
+    }
+  };
+
+  const handleSearchIconClick = () => {
+    setSearchOpen((prev) => !prev);
+    setSearchQuery(""); // Clear search query when toggling
+    setSuggestions([]); // Clear suggestions
+  };
+
+  useEffect(() => {
+    if (searchOpen && searchInputRef.current) {
+      searchInputRef.current.focus(); // Focus the input field when search is open
+    }
+  }, [searchOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -84,9 +118,66 @@ export default function Header() {
             <Link href="/book-consult">
               <button className={styles.button}>Book Consult</button>
             </Link>
-            <span className={styles.searchIcon}>
-              <Image src="/search.png" alt="Search" width={20} height={20} />
+            <span className={styles.searchIcon} onClick={handleSearchIconClick}>
+              <motion.div
+                animate={{
+                  x: searchOpen ? 200 : 0,
+                }}
+                transition={{ duration: 0.3 }}
+              >
+                <Image src="/search.png" alt="Search" width={20} height={20} />
+              </motion.div>
             </span>
+            {searchOpen && (
+              <motion.div
+                className={styles.searchField}
+                initial={{ width: 0, opacity: 0 }}
+                animate={{ width: "150px", opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                  placeholder="Search"
+                  className={styles.searchInput}
+                  ref={searchInputRef} // Attach the ref to the input field
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+                <AnimatePresence>
+                  {suggestions.length > 0 && (
+                    <motion.ul
+                      className={styles.suggestions}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                    >
+                      {suggestions.map((suggestion, index) => (
+                        <li
+                          key={index}
+                          className={styles.suggestionItem}
+                          onClick={() => {
+                            if (typeof suggestion !== "string") {
+                              router.push(suggestion.path);
+                            }
+                            setSearchQuery("");
+                            setSearchOpen(false); // Close the search field
+                          }}
+                        >
+                          {typeof suggestion === "string" ? (
+                            suggestion
+                          ) : (
+                            <span>{suggestion.text}</span>
+                          )}
+                        </li>
+                      ))}
+                    </motion.ul>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            )}
           </div>
         </div>
 
@@ -201,12 +292,76 @@ export default function Header() {
         </nav>
 
         <div className={styles.actions}>
-          <Link href="/book-consult">
-            <button className={styles.button}>Book Consult</button>
-          </Link>
-          <span className={styles.searchIcon}>
-            <Image src="/search.png" alt="Search" width={20} height={20} />
+          <motion.div
+            initial={{ opacity: 1 }}
+            animate={{ opacity: searchOpen ? 0 : 1 }} // Fade out when search is open
+            transition={{ duration: 0.3 }}
+          >
+            <Link href="/book-consult">
+              <button className={styles.button}>Book Consult</button>
+            </Link>
+          </motion.div>
+          <span className={styles.searchIcon} onClick={handleSearchIconClick}>
+            <motion.div
+              animate={{
+                x: searchOpen ? 200 : 0,
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              <Image src="/search.png" alt="Search" width={20} height={20} />
+            </motion.div>
           </span>
+          {searchOpen &&
+            isScrolled && ( // Only show suggestions when mini header is visible
+              <motion.div
+                className={styles.searchField}
+                initial={{ width: 0, opacity: 0 }}
+                animate={{ width: "150px", opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                  placeholder="Search"
+                  className={styles.searchInput}
+                  ref={searchInputRef} // Focus cursor bliking
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+                <AnimatePresence>
+                  {suggestions.length > 0 && (
+                    <motion.ul
+                      className={styles.suggestions}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                    >
+                      {suggestions.map((suggestion, index) => (
+                        <li
+                          key={index}
+                          className={styles.suggestionItem}
+                          onClick={() => {
+                            if (typeof suggestion !== "string") {
+                              router.push(suggestion.path); 
+                            }
+                            setSearchQuery("");
+                            setSearchOpen(false); // Close the search field
+                          }}
+                        >
+                          {typeof suggestion === "string" ? (
+                            suggestion
+                          ) : (
+                            <span>{suggestion.text}</span>
+                          )}
+                        </li>
+                      ))}
+                    </motion.ul>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            )}
         </div>
       </div>
 
@@ -223,7 +378,7 @@ export default function Header() {
           </div>
 
           <div
-            className={styles.logoContainer}
+            className={styles.mobilelogoContainer}
             onClick={handleLogoClick}
             style={{ cursor: "pointer" }}
           >
@@ -236,9 +391,66 @@ export default function Header() {
             />
           </div>
 
-          <span className={styles.searchIcon}>
-            <Image src="/search.png" alt="Search" width={18} height={18} />
-          </span>
+          <span className={styles.searchIcon} onClick={handleSearchIconClick}>
+              <motion.div
+                animate={{
+                  x: searchOpen ? 10 : 0,
+                }}
+                transition={{ duration: 0.3 }}
+              >
+                <Image src="/search.png" alt="Search" width={18} height={18} />
+              </motion.div>
+            </span>
+            {searchOpen && (
+              <motion.div
+                className={styles.mobileSearchField}
+                initial={{ width: 0, opacity: 0 }}
+                animate={{ width: "90px", opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                  placeholder="Search"
+                  className={styles.mobileSearchInput}
+                  ref={searchInputRef} // Attach the ref to the input field
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+                <AnimatePresence>
+                  {suggestions.length > 0 && (
+                    <motion.ul
+                      className={styles.suggestions}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                    >
+                      {suggestions.map((suggestion, index) => (
+                        <li
+                          key={index}
+                          className={styles.mobileSuggestionItem}
+                          onClick={() => {
+                            if (typeof suggestion !== "string") {
+                              router.push(suggestion.path);
+                            }
+                            setSearchQuery("");
+                            setSearchOpen(false); // Close the search field
+                          }}
+                        >
+                          {typeof suggestion === "string" ? (
+                            suggestion
+                          ) : (
+                            <span>{suggestion.text}</span>
+                          )}
+                        </li>
+                      ))}
+                    </motion.ul>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            )}
         </div>
       </header>
 
