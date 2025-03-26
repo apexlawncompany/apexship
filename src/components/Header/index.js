@@ -17,7 +17,6 @@ export default function Header() {
   const [searchQuery, setSearchQuery] = useState(""); // State for search input
   const [suggestions, setSuggestions] = useState([]); // State for search suggestions
   const searchInputRef = useRef(null); // Focus Cursor in search input
-
   const router = useRouter();
   const pathname = usePathname();
 
@@ -28,8 +27,6 @@ export default function Header() {
   const handleSearchChange = (e) => {
     const query = e.target.value;
     setSearchQuery(query);
-
-    // Filter available services based on the query
     if (query.trim() === "") {
       setSuggestions([]);
     } else {
@@ -58,7 +55,6 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -121,18 +117,23 @@ export default function Header() {
             <span className={styles.searchIcon} onClick={handleSearchIconClick}>
               <motion.div
                 animate={{
-                  x: searchOpen ? 200 : 0,
+                  x: searchOpen ? 0 : 0,
                 }}
                 transition={{ duration: 0.3 }}
               >
-                <Image src="/search.png" alt="Search" width={20} height={20} />
+                <Image
+                  src="/search_24.png"
+                  alt="Search"
+                  width={24}
+                  height={24}
+                />
               </motion.div>
             </span>
             {searchOpen && (
               <motion.div
                 className={styles.searchField}
                 initial={{ width: 0, opacity: 0 }}
-                animate={{ width: "150px", opacity: 1 }}
+                animate={{ width: "120px", opacity: 1 }}
                 transition={{ duration: 0.3 }}
               >
                 <input
@@ -221,11 +222,18 @@ export default function Header() {
             AVAIL_SERVICES.map((service) => (
               <motion.div
                 key={service.path}
-                initial={{ opacity: 0, y: -5 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+                initial="hidden"
+                animate="visible"
+                variants={typingAnimation(service.text)}
+                // transition={{ duration: 0.5 }}
               >
-                <Link href={service.path}>{service.text}</Link>
+                <Link href={service.path}>
+                  {service.text.split("").map((char, index) => (
+                    <motion.span key={index} variants={letterAnimation}>
+                      {char}
+                    </motion.span>
+                  ))}
+                </Link>
               </motion.div>
             ))
           )}
@@ -304,11 +312,11 @@ export default function Header() {
           <span className={styles.searchIcon} onClick={handleSearchIconClick}>
             <motion.div
               animate={{
-                x: searchOpen ? 200 : 0,
+                x: searchOpen ? 0 : 0,
               }}
               transition={{ duration: 0.3 }}
             >
-              <Image src="/search.png" alt="Search" width={20} height={20} />
+              <Image src="/search_24.png" alt="Search" width={20} height={20} />
             </motion.div>
           </span>
           {searchOpen &&
@@ -316,7 +324,7 @@ export default function Header() {
               <motion.div
                 className={styles.searchField}
                 initial={{ width: 0, opacity: 0 }}
-                animate={{ width: "150px", opacity: 1 }}
+                animate={{ width: "120px", opacity: 1 }}
                 transition={{ duration: 0.3 }}
               >
                 <input
@@ -344,7 +352,7 @@ export default function Header() {
                           className={styles.suggestionItem}
                           onClick={() => {
                             if (typeof suggestion !== "string") {
-                              router.push(suggestion.path); 
+                              router.push(suggestion.path);
                             }
                             setSearchQuery("");
                             setSearchOpen(false); // Close the search field
@@ -390,15 +398,29 @@ export default function Header() {
               className={styles.logo}
             />
           </div>
-
-          <span className={styles.searchIcon} onClick={handleSearchIconClick}>
+          <div className={styles.mobileActions}>
+          <motion.div
+            initial={{ opacity: 1 }}
+            animate={{ opacity: searchOpen ? 0 : 1 }} // Fade out when search is open
+            transition={{ duration: 0.3 }}
+          >
+            <Link href="/book-consult">
+              <button className={styles.mobileButton}>Book Consult</button>
+            </Link>
+          </motion.div>
+            <span className={styles.searchIcon} onClick={handleSearchIconClick}>
               <motion.div
                 animate={{
-                  x: searchOpen ? 10 : 0,
+                  x: searchOpen ? -90 : 0,
                 }}
                 transition={{ duration: 0.3 }}
               >
-                <Image src="/search.png" alt="Search" width={18} height={18} />
+                <Image
+                  src="/search_24.png"
+                  alt="Search"
+                  width={20}
+                  height={20}
+                />
               </motion.div>
             </span>
             {searchOpen && (
@@ -451,6 +473,7 @@ export default function Header() {
                 </AnimatePresence>
               </motion.div>
             )}
+          </div>
         </div>
       </header>
 
