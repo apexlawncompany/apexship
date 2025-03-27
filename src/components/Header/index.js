@@ -122,7 +122,7 @@ export default function Header() {
                 transition={{ duration: 0.3 }}
               >
                 <Image
-                  src="/search_24.png"
+                  src="/magnifying-glass.png"
                   alt="Search"
                   width={24}
                   height={24}
@@ -257,7 +257,8 @@ export default function Header() {
             className={styles.logo}
           />
         </div>
-        <nav className={styles.nav}>
+
+        <nav className={styles.miniNav}>
           {selectedService ? (
             <>
               {/* Active Service Title with Smooth Movement */}
@@ -299,16 +300,16 @@ export default function Header() {
           )}
         </nav>
 
-        <div className={styles.actions}>
-          <motion.div
+        <div className={styles.miniHeaderActions}>
+          {/* <motion.div
             initial={{ opacity: 1 }}
-            animate={{ opacity: searchOpen ? 0 : 1 }} // Fade out when search is open
+            animate={{ opacity: searchOpen ? 0 : 1 }} 
             transition={{ duration: 0.3 }}
-          >
+          > */}
             <Link href="/book-consult">
               <button className={styles.button}>Book Consult</button>
             </Link>
-          </motion.div>
+          {/* </motion.div> */}
           <span className={styles.searchIcon} onClick={handleSearchIconClick}>
             <motion.div
               animate={{
@@ -316,7 +317,7 @@ export default function Header() {
               }}
               transition={{ duration: 0.3 }}
             >
-              <Image src="/search_24.png" alt="Search" width={20} height={20} />
+              <Image src="/magnifying-glass.png" alt="Search" width={20} height={20} />
             </motion.div>
           </span>
           {searchOpen &&
@@ -376,6 +377,7 @@ export default function Header() {
       {/* Mobile Header */}
       <header className={styles.mobileHeader}>
         <div className={` ${styles.mobileContentHeader}`}>
+
           <div
             className={`${styles.hamburger} ${menuOpen ? styles.active : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
@@ -398,6 +400,7 @@ export default function Header() {
               className={styles.logo}
             />
           </div>
+
           <div className={styles.mobileActions}>
           <motion.div
             initial={{ opacity: 1 }}
@@ -416,7 +419,7 @@ export default function Header() {
                 transition={{ duration: 0.3 }}
               >
                 <Image
-                  src="/search_24.png"
+                  src="/magnifying-glass.png"
                   alt="Search"
                   width={20}
                   height={20}
@@ -474,6 +477,7 @@ export default function Header() {
               </motion.div>
             )}
           </div>
+          
         </div>
       </header>
 
