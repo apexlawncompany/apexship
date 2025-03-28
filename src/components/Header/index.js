@@ -19,6 +19,9 @@ export default function Header() {
   const searchInputRef = useRef(null); // Focus Cursor in search input
   const router = useRouter();
   const pathname = usePathname();
+  const optionsRef = useRef(null);
+  const [showShadow, setShowShadow] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   const handleLogoClick = () => {
     router.push("/");
@@ -87,6 +90,32 @@ export default function Header() {
     visible: { opacity: 1 },
   };
 
+  useEffect(() => {
+    function checkOverflow() {
+      setTimeout(() => {
+        const element = optionsRef.current;
+
+        setShowShadow(
+          element.scrollWidth > element.clientWidth ||
+            element.scrollHeight > element.clientHeight
+        );
+      }, 1000);
+    }
+    checkOverflow();
+  }, [isScrolled]);
+
+  
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsSmallScreen(window.innerWidth < 700);
+    };
+
+    checkScreenSize(); // Initial check
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
   return (
     <>
       {/* Full Header */}
@@ -111,9 +140,15 @@ export default function Header() {
           </div>
 
           <div className={styles.actions}>
-            <Link href="/book-consult">
-              <button className={styles.button}>Book Consult</button>
-            </Link>
+            <motion.div
+              initial={{ opacity: 1 }}
+              animate={{ opacity: isSmallScreen && searchOpen ? 0 : 1 }} // Only fade out on mobile
+              transition={{ duration: 0.3 }}
+            >
+              <Link href="/book-consult">
+                <button className={styles.button}>Book Consult</button>
+              </Link>
+            </motion.div>
             <span className={styles.searchIcon} onClick={handleSearchIconClick}>
               <motion.div
                 animate={{
@@ -183,61 +218,67 @@ export default function Header() {
         </div>
 
         {/* Navigation */}
-        <nav className={`margin-top margin-bottom ${styles.nav}`}>
-          {selectedService ? (
-            <>
-              {/* Active Service Title with Smooth Movement */}
-              <motion.span
-                className={styles.activeService}
-                variants={typingAnimation(selectedService.text)}
-                initial="hidden"
-                animate="visible"
-              >
-                {selectedService.text.split("").map((char, index) => (
-                  <motion.span key={index} variants={letterAnimation}>
-                    {char}
-                  </motion.span>
-                ))}
-              </motion.span>
-
-              {selectedService.subcategories?.map((sub, index) => (
-                <motion.div
-                  key={sub.id}
-                  className={styles.subNavItem}
-                  variants={typingAnimation(sub.text)}
+        <div className={styles.fullNavContainer}>
+          <nav
+            ref={optionsRef}
+            className={`margin-top margin-bottom ${styles.fullNav}`}
+          >
+            {showShadow ? <span className={styles.fullNavShadow}></span> : ""}
+            {selectedService ? (
+              <>
+                {/* Active Service Title with Smooth Movement */}
+                <motion.span
+                  className={styles.activeService}
+                  variants={typingAnimation(selectedService.text)}
                   initial="hidden"
                   animate="visible"
                 >
-                  <Link href={sub.path}>
-                    {sub.text.split("").map((char, charIndex) => (
-                      <motion.span key={charIndex} variants={letterAnimation}>
+                  {selectedService.text.split("").map((char, index) => (
+                    <motion.span key={index} variants={letterAnimation}>
+                      {char}
+                    </motion.span>
+                  ))}
+                </motion.span>
+
+                {selectedService.subcategories?.map((sub, index) => (
+                  <motion.div
+                    key={sub.id}
+                    className={styles.subNavItem}
+                    variants={typingAnimation(sub.text)}
+                    initial="hidden"
+                    animate="visible"
+                  >
+                    <Link href={sub.path}>
+                      {sub.text.split("").map((char, charIndex) => (
+                        <motion.span key={charIndex} variants={letterAnimation}>
+                          {char}
+                        </motion.span>
+                      ))}
+                    </Link>
+                  </motion.div>
+                ))}
+              </>
+            ) : (
+              AVAIL_SERVICES.map((service) => (
+                <motion.div
+                  key={service.path}
+                  initial="hidden"
+                  animate="visible"
+                  variants={typingAnimation(service.text)}
+                  // transition={{ duration: 0.5 }}
+                >
+                  <Link href={service.path}>
+                    {service.text.split("").map((char, index) => (
+                      <motion.span key={index} variants={letterAnimation}>
                         {char}
                       </motion.span>
                     ))}
                   </Link>
                 </motion.div>
-              ))}
-            </>
-          ) : (
-            AVAIL_SERVICES.map((service) => (
-              <motion.div
-                key={service.path}
-                initial="hidden"
-                animate="visible"
-                variants={typingAnimation(service.text)}
-                // transition={{ duration: 0.5 }}
-              >
-                <Link href={service.path}>
-                  {service.text.split("").map((char, index) => (
-                    <motion.span key={index} variants={letterAnimation}>
-                      {char}
-                    </motion.span>
-                  ))}
-                </Link>
-              </motion.div>
-            ))
-          )}
-        </nav>
+              ))
+            )}
+          </nav>
+        </div>
       </header>
 
       {/* Mini Header */}
@@ -257,58 +298,59 @@ export default function Header() {
             className={styles.logo}
           />
         </div>
-
-        <nav className={styles.miniNav}>
-          {selectedService ? (
-            <>
-              {/* Active Service Title with Smooth Movement */}
-              <motion.span
-                className={styles.activeService}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                {selectedService.text}
-              </motion.span>
-              {selectedService.subcategories?.map((sub, index) => (
-                <motion.div
-                  key={sub.id}
-                  className={styles.subNavItem}
-                  initial={{ opacity: 0, width: "auto" }}
-                  animate={{ opacity: 1, width: "auto" }}
-                  transition={{ duration: 1.5, delay: index * 0.2 }}
+        <div className={styles.miniNavContainer}>
+          <nav ref={optionsRef} className={styles.miniNav}>
+            {showShadow ? <span className={styles.miniShadow}></span> : ""}
+            {selectedService ? (
+              <>
+                {/* Active Service Title with Smooth Movement */}
+                <motion.span
+                  className={styles.activeService}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5 }}
                 >
-                  <Link href={sub.path}>
-                    {sub?.text === "Custom Packaging & Branding"
-                      ? "Packaging & Branding"
-                      : sub.text}
-                  </Link>
+                  {selectedService.text}
+                </motion.span>
+                {selectedService.subcategories?.map((sub, index) => (
+                  <motion.div
+                    key={sub.id}
+                    className={styles.subNavItem}
+                    initial={{ opacity: 0, width: "auto" }}
+                    animate={{ opacity: 1, width: "auto" }}
+                    transition={{ duration: 1.5, delay: index * 0.2 }}
+                  >
+                    <Link href={sub.path}>
+                      {sub?.text === "Custom Packaging & Branding"
+                        ? "Packaging & Branding"
+                        : sub.text}
+                    </Link>
+                  </motion.div>
+                ))}
+              </>
+            ) : (
+              AVAIL_SERVICES.map((service) => (
+                <motion.div
+                  key={service.path}
+                  initial={{ opacity: 0, y: -5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Link href={service.path}>{service.text}</Link>
                 </motion.div>
-              ))}
-            </>
-          ) : (
-            AVAIL_SERVICES.map((service) => (
-              <motion.div
-                key={service.path}
-                initial={{ opacity: 0, y: -5 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <Link href={service.path}>{service.text}</Link>
-              </motion.div>
-            ))
-          )}
-        </nav>
-
+              ))
+            )}
+          </nav>
+        </div>
         <div className={styles.miniHeaderActions}>
           {/* <motion.div
             initial={{ opacity: 1 }}
             animate={{ opacity: searchOpen ? 0 : 1 }} 
             transition={{ duration: 0.3 }}
           > */}
-            <Link href="/book-consult">
-              <button className={styles.button}>Book Consult</button>
-            </Link>
+          <Link href="/book-consult">
+            <button className={styles.button}>Book Consult</button>
+          </Link>
           {/* </motion.div> */}
           <span className={styles.searchIcon} onClick={handleSearchIconClick}>
             <motion.div
@@ -317,7 +359,12 @@ export default function Header() {
               }}
               transition={{ duration: 0.3 }}
             >
-              <Image src="/magnifying-glass.png" alt="Search" width={20} height={20} />
+              <Image
+                src="/magnifying-glass.png"
+                alt="Search"
+                width={20}
+                height={20}
+              />
             </motion.div>
           </span>
           {searchOpen &&
@@ -377,7 +424,6 @@ export default function Header() {
       {/* Mobile Header */}
       <header className={styles.mobileHeader}>
         <div className={` ${styles.mobileContentHeader}`}>
-
           <div
             className={`${styles.hamburger} ${menuOpen ? styles.active : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
@@ -402,15 +448,15 @@ export default function Header() {
           </div>
 
           <div className={styles.mobileActions}>
-          <motion.div
-            initial={{ opacity: 1 }}
-            animate={{ opacity: searchOpen ? 0 : 1 }} // Fade out when search is open
-            transition={{ duration: 0.3 }}
-          >
-            <Link href="/book-consult">
-              <button className={styles.mobileButton}>Book Consult</button>
-            </Link>
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 1 }}
+              animate={{ opacity: searchOpen ? 0 : 1 }} // Fade out when search is open
+              transition={{ duration: 0.3 }}
+            >
+              <Link href="/book-consult">
+                <button className={styles.mobileButton}>Book Consult</button>
+              </Link>
+            </motion.div>
             <span className={styles.searchIcon} onClick={handleSearchIconClick}>
               <motion.div
                 animate={{
@@ -477,7 +523,6 @@ export default function Header() {
               </motion.div>
             )}
           </div>
-          
         </div>
       </header>
 

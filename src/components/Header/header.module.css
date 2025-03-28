@@ -110,7 +110,7 @@
   background: #f0f0f0;
 }
 
-.nav {
+.fullNav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,9 +126,16 @@
   gap: 15px;
   flex:1;
   overflow: auto;
+  /* position: relative; */
 }
 
-.nav a , .miniNav a {
+.miniNavContainer , .fullNavContainer {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.fullNav a , .miniNav a {
   position: relative;
   text-decoration: none;
   color: white;
@@ -141,7 +148,7 @@
   flex-shrink: 0;
 }
 
-.nav a::after, .miniNav a::after {
+.fullNav a::after, .miniNav a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -152,12 +159,33 @@
   transition: width 0.2s ease-in-out; /* Left-to-right effect */
 }
 
-.nav a:hover::after, .miniNav a:hover::after {
+.fullNav a:hover::after, .miniNav a:hover::after {
   width: 100%;
 }
 
-.nav::-webkit-scrollbar , .miniNav::-webkit-scrollbar {
+.fullNav::-webkit-scrollbar , .miniNav::-webkit-scrollbar {
   display: none; /* Hide scrollbar in WebKit browsers (Chrome, Safari) */
+}
+
+.fullNavShadow {
+  position: absolute;
+  right: 0;
+  width: 50px;
+  height: 40px;
+  z-index: 1;
+  background:linear-gradient(to left, rgba(100, 100, 100, 1), rgba(100, 100, 100, 0));
+  border-radius: 0px;
+}
+
+.miniShadow {
+  position: absolute;
+  top: 1px;
+  right: 0;
+  width: 50px;
+  height: 20px;
+  z-index: 1;
+  background: linear-gradient(to left, rgba(92, 92, 92, 2), rgba(92, 92, 92, 0));
+  border-radius: 7px 0 0 70px;
 }
 
 .activeService {
@@ -477,7 +505,7 @@
     padding: 5px 13px;
     font-size: 12px;
   }
-  .nav a, .miniNav a {
+  .fullNav a, .miniNav a {
     font-size: 12px;
   }
   .activeService {
@@ -497,10 +525,10 @@
     padding: 5px 13px;
     font-size: 12px;
   }
-  .nav {
+  .fullNav {
     justify-content: space-around;
   }
-  .nav a , .miniNav a {
+  .fullNav a , .miniNav a {
     font-size: 12px;
   }
   .activeService {
