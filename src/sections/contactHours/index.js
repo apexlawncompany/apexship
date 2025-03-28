@@ -2,9 +2,7 @@ import styles from "../contactHours/contactHours.module.css";
 
 export default function ContactHours() {
   return (
-    <div
-      style={{ backgroundColor: "white", width: "100%", borderRadius: "12px" }}
-    >
+    <div className={styles.contactSection}>
       <div className={`page-margin ${styles.contactContainer}`}>
         <div className={styles.mapContainer}>
           {/* Updated Google Map Embed */}

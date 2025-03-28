@@ -1,3 +1,9 @@
+.contactSection {
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+}
+
 .contactContainer {
   display: flex;
   justify-content: space-between;
@@ -67,6 +73,12 @@
 
   .hours {
     padding-top: 0px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .contactSection {
+    border-radius: 0px;
   }
 }
 
