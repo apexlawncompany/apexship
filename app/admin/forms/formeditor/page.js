@@ -8,6 +8,9 @@ export default function NewFormPage() {
   const [questions, setQuestions] = useState([
     { label: "", type: "text", options: [] },
   ]);
+  const [forms, setForms] = useState(["Form1", "Form2", "Form3"]);
+  const [showModal, setShowModal] = useState(false);
+  const [formToDelete, setFormToDelete] = useState(null);
 
   const addQuestion = () => {
     setQuestions([...questions, { label: "", type: "text", options: [] }]);
@@ -49,6 +52,24 @@ export default function NewFormPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log({ formName, questions });
+    // Optionally add to forms
+    // setForms([...forms, formName]);
+  };
+
+  const openDeleteModal = (formName) => {
+    setFormToDelete(formName);
+    setShowModal(true);
+  };
+
+  const confirmDelete = () => {
+    setForms(forms.filter((f) => f !== formToDelete));
+    setShowModal(false);
+    setFormToDelete(null);
+  };
+
+  const cancelDelete = () => {
+    setShowModal(false);
+    setFormToDelete(null);
   };
 
   return (
@@ -56,10 +77,10 @@ export default function NewFormPage() {
       <aside className={styles.sidebar}>
         <h2 className={styles.logo}>Create/Edit Form</h2>
         <nav className={styles.nav}>
-          {["Form1", "Form2", "Form3"].map((form, idx) => (
+          {forms.map((form, idx) => (
             <div key={idx} className={styles.navItem}>
               <span
-                onClick={() => console.log(`Open ${form}`)} // Replace with logic
+                onClick={() => console.log(`Open ${form}`)}
                 className={styles.formName}
               >
                 {form}
@@ -72,7 +93,7 @@ export default function NewFormPage() {
                   ✏️
                 </button>
                 <button
-                  onClick={() => console.log(`Delete ${form}`)}
+                  onClick={() => openDeleteModal(form)}
                   className={styles.iconBtn}
                 >
                   🗑️
@@ -82,6 +103,7 @@ export default function NewFormPage() {
           ))}
         </nav>
       </aside>
+
       <div className={styles.formContainer}>
         <h1 style={{ paddingBottom: "0.5rem" }}>Create New Form</h1>
         <form onSubmit={handleSubmit} className={styles.form}>
@@ -152,6 +174,24 @@ export default function NewFormPage() {
           </button>
         </form>
       </div>
+
+      {showModal && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modal}>
+            <p>
+              Are you sure you want to delete <strong>{formToDelete}</strong>?
+            </p>
+            <div className={styles.modalActions}>
+              <button onClick={confirmDelete} className={styles.confirmBtn}>
+                Yes, Delete
+              </button>
+              <button onClick={cancelDelete} className={styles.cancelBtn}>
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
