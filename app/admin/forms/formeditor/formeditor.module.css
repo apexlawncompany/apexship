@@ -1,0 +1,223 @@
+/* Layout */
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: #f9fafb;
+  font-family: 'Segoe UI', sans-serif;
+  color: #111;
+}
+
+.sidebar {
+  width: 260px;
+  background-color: #111827;
+  color: #f9fafb;
+  padding: 2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #facc15;
+}
+
+/* Sidebar Navigation */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.navItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f2937;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.navItem:hover {
+  background-color: #374151;
+}
+
+.formName {
+  flex-grow: 1;
+  font-size: 1rem;
+  color: #f9fafb;
+}
+
+.iconGroup {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.iconBtn {
+  background: none;
+  border: none;
+  color: #d1d5db;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: color 0.2s ease;
+}
+
+.iconBtn:hover {
+  color: #facc15;
+}
+
+/* Form Container */
+.formContainer {
+  flex: 1;
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Inputs */
+.input, .select {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: white;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  transition: border 0.2s ease;
+}
+
+.input:focus, .select:focus {
+  border-color: #6366f1;
+  outline: none;
+}
+
+/* Question Card */
+.questionRow {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Options */
+.options {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.options label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.optionRow {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.optionRow input {
+  flex: 1;
+}
+
+.optionRow button {
+  background: #ef4444;
+  border: none;
+  color: white;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.optionRow button:hover {
+  background: #dc2626;
+}
+
+/* Buttons */
+.addBtn, .submitBtn {
+  background-color: #111827;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.addBtn:hover, .submitBtn:hover {
+  background-color: #1f2937;
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.modalActions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.confirmBtn {
+  background-color: #dc2626;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.confirmBtn:hover {
+  background-color: #b91c1c;
+}
+
+.cancelBtn {
+  background-color: #e5e7eb;
+  color: #111827;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cancelBtn:hover {
+  background-color: #d1d5db;
+}
