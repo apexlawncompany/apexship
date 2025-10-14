@@ -3,7 +3,7 @@
   display: flex;
   min-height: 100vh;
   background: #f9fafb;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   color: #111;
 }
 
@@ -84,17 +84,19 @@
 }
 
 /* Inputs */
-.input, .select {
+.input,
+.select {
   padding: 0.75rem 1rem;
   font-size: 1rem;
   border-radius: 10px;
   border: 1px solid #d1d5db;
   background: white;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
   transition: border 0.2s ease;
 }
 
-.input:focus, .select:focus {
+.input:focus,
+.select:focus {
   border-color: #6366f1;
   outline: none;
 }
@@ -105,7 +107,7 @@
   padding: 1rem;
   border-radius: 10px;
   border: 1px solid #e5e7eb;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -151,7 +153,8 @@
 }
 
 /* Buttons */
-.addBtn, .submitBtn {
+.addBtn,
+.submitBtn {
   background-color: #111827;
   color: white;
   padding: 0.75rem 1.25rem;
@@ -161,7 +164,8 @@
   transition: background 0.2s ease;
 }
 
-.addBtn:hover, .submitBtn:hover {
+.addBtn:hover,
+.submitBtn:hover {
   background-color: #1f2937;
 }
 
@@ -172,7 +176,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -186,7 +190,7 @@
   width: 90%;
   max-width: 400px;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .modalActions {
