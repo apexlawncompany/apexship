@@ -13,6 +13,7 @@
   display: flex;
   flex-direction: column;
 }
+
 .flexContainer {
   display: flex;
   gap: 20px;
@@ -27,11 +28,16 @@
 .contactHoursSection {
   padding-left: 20px;
 }
+
 .content {
   max-width: 50%;
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Align all left */
+}
+
+.partnersDiv h2 {
+  text-align: left;
 }
 
 .logo {
@@ -119,9 +125,9 @@
 }
 
 .copyright {
-  display: flex; 
-  justify-content: flex-end; 
-  align-items: center; 
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   gap: 10px;
   font-size: 14px;
   margin-top: min(5%, 20px);
@@ -146,6 +152,10 @@
   .newsletter {
     max-width: 100%;
     align-items: center;
+  }
+
+  .partnersDiv h2 {
+    text-align: center;
   }
 
   .emailForm {
