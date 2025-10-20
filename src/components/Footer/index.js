@@ -22,6 +22,12 @@ export default function Footer() {
 
             <hr className={styles.divider} />
 
+            <div className={styles.partnersDiv}>
+              <h2 className={`heading-font ${styles.logo}`}><Link href="/partners">Partners</Link></h2>
+            </div>
+
+            <hr className={styles.divider} />
+
             <div className={`margin-bottom ${styles.newsletter}`}>
               <h3 className={`margin-bottom`}>Stay in the Loop</h3>
 
@@ -43,8 +49,8 @@ export default function Footer() {
           </div>
         </div>
         <div className={styles.copyright}>
-        <Link href="/policy">Policy</Link>
-        <p >© 2025</p>
+          <Link href="/policy">Policy</Link>
+          <p>© 2025</p>
         </div>
       </div>
     </div>
