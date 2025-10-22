@@ -47,7 +47,7 @@ export default function Partners() {
         <div className={`margin-right ${styles.productSection}`}>
           <div className={styles.imageContainer}>
             <Image
-              src="/assets/partners/prana-icon.png"
+              src="/assets/partners/prana-logo.png"
               alt="Prana Health Care"
               width={634}
               height={300}
