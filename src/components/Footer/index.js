@@ -37,7 +37,7 @@ export default function Footer() {
               </div>
               <p>
                 This form is protected by reCAPTCHA and the Google{" "}
-                <a href="https://policies.google.com/terms">Terms of Service</a>{" "}
+                <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a>{" "}
                 apply.
               </p>
             </div>

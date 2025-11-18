@@ -1,4 +1,3 @@
-import SideBar from "@/src/components/Sidebar";
 import styles from "../print&products.module.css";
 
 export default function FlyersBrochures() {
