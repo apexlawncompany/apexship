@@ -1,4 +1,3 @@
-import SideBar from "@/src/components/Sidebar";
 import styles from "../shipping&courier.module.css";
 
 export default function VirtualMailBox() {

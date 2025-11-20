@@ -124,7 +124,7 @@ export default function CustomPackagingAndBranding() {
                   product packaging creates a memorable experience.
                 </li>
                 <li>
-                  Packaging that reflects the brand’s personality and values can
+                  Packaging that reflects the brand's personality and values can
                   create an emotional bond with consumers, making them more
                   loyal and likely to recommend the product.
                 </li>
@@ -152,11 +152,11 @@ export default function CustomPackagingAndBranding() {
                   67% of consumers say that product packaging impacts the
                   perceived value of the item inside. High-quality or customized
                   packaging often leads to higher perceived value, even if the
-                  product itself isn’t premium.
+                  product itself isn't premium.
                 </li>
                 <li>
                   Consumers expect aesthetically pleasing, thoughtful packaging
-                  that reflects the quality of the product they’re purchasing.
+                  that reflects the quality of the product they're purchasing.
                 </li>
               </ul>
             </div>
@@ -184,7 +184,7 @@ export default function CustomPackagingAndBranding() {
                 </li>
                 <li>
                   Custom packaging that incorporates eco-friendly materials or
-                  highlights a brand’s sustainability practices can improve
+                  highlights a brand's sustainability practices can improve
                   brand perception and appeal to environmentally conscious
                   shoppers.
                 </li>
@@ -211,11 +211,11 @@ export default function CustomPackagingAndBranding() {
                 <li>
                   In the age of social media, unique packaging encourages
                   customers to share their unboxing experiences. In fact, 40% of
-                  consumers would share a brand’s packaging on social media if
-                  it’s exceptional or engaging.
+                  consumers would share a brand's packaging on social media if
+                  it's exceptional or engaging.
                 </li>
                 <li>
-                  Custom packaging often becomes part of a brand’s marketing, as
+                  Custom packaging often becomes part of a brand's marketing, as
                   it can be used in user-generated content or influencer
                   partnerships.
                 </li>
@@ -304,7 +304,7 @@ export default function CustomPackagingAndBranding() {
                 </li>
                 <li>
                   Custom packaging allows brands to craft an experience that
-                  matches their core values—whether that’s through luxurious,
+                  matches their core values—whether that's through luxurious,
                   elegant designs or creative, fun elements.
                 </li>
               </ul>
@@ -334,7 +334,7 @@ export default function CustomPackagingAndBranding() {
                 </li>
                 <li>
                   Custom packaging provides an opportunity to convey brand
-                  transparency, whether it’s in terms of ingredient sourcing,
+                  transparency, whether it's in terms of ingredient sourcing,
                   product origin, or sustainability claims.
                 </li>
               </ul>
@@ -353,8 +353,8 @@ export default function CustomPackagingAndBranding() {
           critical touchpoint in fostering loyalty, encouraging repeat
           purchases, and generating valuable word-of-mouth marketing through
           social media. In sum, investing in well-designed, custom packaging
-          isn’t just about making a product look good—it’s about creating
-          lasting impressions and aligning your brand with your customer’s
+          isn’t just about making a product look good-it's about creating
+          lasting impressions and aligning your brand with your customer's
           values and expectations.
         </p>
       </div>

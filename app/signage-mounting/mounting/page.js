@@ -1,4 +1,3 @@
-import SideBar from "@/src/components/Sidebar";
 import styles from "../signage&mounting.module.css";
 
 export default function Mounting() {

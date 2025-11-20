@@ -38,7 +38,7 @@ export default function BookConsult() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      alert("Form submitted successfully!"); // Replace with actual submission logic
+      alert("Form submitted successfully!");
     }
     console.log("Consult Form", formData);
   };
@@ -122,6 +122,7 @@ export default function BookConsult() {
               name="date"
               value={formData.date}
               onChange={handleChange}
+              min={new Date().toISOString().split("T")[0]} // to disable past days added this line
             />
             {errors.date && <span className={styles.error}>{errors.date}</span>}
           </label>
