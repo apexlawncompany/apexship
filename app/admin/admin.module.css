@@ -15,7 +15,7 @@
   color: #ffffff;
 }
 
-.input {
+.container input {
   width: 100%;
   padding: 10px 14px;
   margin: 10px 0;
@@ -24,7 +24,7 @@
   font-size: 15px;
 }
 
-.button {
+.container button {
   width: 100%;
   padding: 10px 16px;
   margin-top: 10px;
@@ -37,8 +37,20 @@
   font-size: 15px;
 }
 
-.button:hover {
+.container button:hover {
   background: #933b00;
+}
+
+.error {
+  background: rgba(251, 151, 84, 0.15);
+  border: 1px solid rgba(251, 151, 84, 0.5);
+  color: #fb9754;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 .switch {
