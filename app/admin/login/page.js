@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import styles from "../admin.module.css";
+import styles from "./login.module.css";
 
 export default function LoginPage() {
   const [loading, setLoading] = useState(false);
@@ -25,8 +25,12 @@ export default function LoginPage() {
 
     setLoading(false);
     if (!res.ok) {
-      const data = await res.json();
-      setError(data.error || "Something went wrong");
+      let message = "Something went wrong";
+      try {
+        const data = await res.json();
+        message = data.error || message;
+      } catch {}
+      setError(message);
       return;
     }
 

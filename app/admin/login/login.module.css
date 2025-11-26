@@ -1,0 +1,79 @@
+.container {
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 30px;
+  background: black;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.container input {
+  width: 100%;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.container button {
+  width: 100%;
+  padding: 10px 16px;
+  margin-top: 10px;
+  background: #b54e00;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  font-size: 15px;
+}
+
+.container button:hover {
+  background: #933b00;
+}
+
+.error {
+  background: rgba(251, 151, 84, 0.15);
+  border: 1px solid rgba(251, 151, 84, 0.5);
+  color: #fb9754;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.switch {
+  margin-top: 12px;
+  text-align: center;
+  color: grey;
+  cursor: pointer;
+}
+
+.switch:hover {
+  text-decoration: underline;
+}
+
+.header {
+  background: #1d1d1d;
+  color: #ffffff;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.content {
+  max-width: 800px;
+  margin: auto;
+  font-size: 18px;
+}

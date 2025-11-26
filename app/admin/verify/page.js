@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import styles from "../admin.module.css";
+import styles from "../login/login.module.css";
 
 export default function VerifyOtpPage() {
   const [loading, setLoading] = useState(false);
