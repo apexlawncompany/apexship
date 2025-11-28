@@ -27,7 +27,6 @@ export default function AdminHome() {
     <div className={styles.container}>
       {/* Sidebar */}
       <aside className={styles.sidebar}>
-        <h2 className={styles.title}>Admin Panel</h2>
 
         {user && (
           <div className={styles.profileBox}>
@@ -38,6 +37,20 @@ export default function AdminHome() {
               height={30}
             />
             <p className={styles.profileName}>{user.name}</p>
+
+            {/* Mobile Logout Icon */}
+            <button
+              className={styles.mobileLogoutIcon}
+              onClick={handleLogout}
+              aria-label="logout"
+            >
+              <Image
+                src="/power-off.png"
+                alt="Logout icon"
+                width={20}
+                height={20}
+              />
+            </button>
           </div>
         )}
 
@@ -49,7 +62,9 @@ export default function AdminHome() {
       {/* Main */}
       <main className={styles.main}>
         <h1 className={styles.welcome}>Welcome, Admin</h1>
-        <p className={styles.subtitle}>Your dashboard awaits.</p>
+        <button className={styles.optBtn}>
+          Create new web page
+        </button>
       </main>
     </div>
   );

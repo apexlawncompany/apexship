@@ -31,7 +31,7 @@
 }
 
 .logoutBtn {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   padding: 10px 15px;
   background: #b54e00;
   color: #fff;
@@ -61,4 +61,66 @@
 .subtitle {
   font-size: 18px;
   color: #ccc;
+}
+.optBtn {
+  padding: 10px 15px;
+  background: white;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  /* width: 100%; */
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+.optBtn:hover {
+  background: grey;
+}
+.mobileLogoutIcon {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .profileBox {
+    margin: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .profileBox img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .logoutBtn {
+    display: none;
+  }
+
+  .mobileLogoutIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main {
+    padding: 40px 20px;
+    text-align: center;
+  }
 }
