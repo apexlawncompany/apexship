@@ -1,0 +1,19 @@
+.welcome {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.optBtn {
+  padding: 10px 15px;
+  background: white;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  /* width: 100%; */
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+.optBtn:hover {
+  background: grey;
+}

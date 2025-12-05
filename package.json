@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "framer-motion": "^12.3.1",
+    "jose": "^6.1.2",
+    "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.475.0",
+    "mongoose": "^8.20.1",
     "next": "15.1.6",
+    "nodemailer": "^7.0.10",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   }
