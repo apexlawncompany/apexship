@@ -22,7 +22,14 @@ export default function AdminSidebar() {
 
   async function handleLogout() {
     await fetch("/api/auth/logout", { method: "POST" });
-    window.location.replace("/admin/login");
+    router.push("/admin/login");
+  }
+
+  function goToDashboard() {
+    router.push("/admin/dashboard");
+  }
+  function goToHome() {
+    router.push("/admin");
   }
 
   return (
@@ -46,6 +53,13 @@ export default function AdminSidebar() {
           </button>
         </div>
       )}
+      <button className={styles.navBtn} onClick={goToHome}>
+        Home
+      </button>
+      <hr className={styles.hrLine}></hr>
+      <button className={styles.navBtn} onClick={goToDashboard}>
+        Dashboard
+      </button>
 
       <button className={styles.logoutBtn} onClick={handleLogout}>
         Logout
