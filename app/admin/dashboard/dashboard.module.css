@@ -3,25 +3,31 @@
 }
 
 .title {
-  font-size: 38px;
+  font-size: 36px;
   font-weight: bold;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   color: #111;
 }
 
 .section {
-  margin-bottom: 40px;
+  margin-bottom: 16px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 5px;
 }
 
 .heading {
   font-size: 26px;
   font-weight: bold;
-  margin-bottom: 16px;
 }
 
 .treeList {
   list-style: none;
-  padding-left: 14px;
+  /* padding-left: 14px; */
   border-left: 3px solid #b54e00;
   background: #fff;
   border-radius: 8px;
@@ -33,9 +39,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #000;
 }
 
-.treeList:hover {
+.treeItem:hover {
   font-weight: 600;
   background: grey;
 }
@@ -69,6 +76,10 @@
 
 .deleteBtn:hover {
   background: #933b00;
+}
+
+.hrLine {
+  color: grey;
 }
 
 .empty {

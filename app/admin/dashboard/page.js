@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import styles from "./dashboard.module.css";
 
 export default function Dashboard() {
@@ -42,7 +43,7 @@ export default function Dashboard() {
   }
 
   function editForm(id) {
-    router.push(`/dashboard/forms/${id}`);
+    router.push(`/admin/dashboard/forms/${id}`);
   }
 
   return (
@@ -51,7 +52,15 @@ export default function Dashboard() {
 
       {/* Forms Section */}
       <div className={styles.section}>
-        <h2 className={styles.heading}>📄 Saved Forms</h2>
+        <div className={styles.sectionHeader}>
+          <Image
+            src="/assets/templates/forms.png"
+            alt="Search"
+            width={30}
+            height={30}
+          />
+          <h2 className={styles.heading}>Saved Forms</h2>
+        </div>
 
         {loading ? (
           <p className={styles.empty}>Loading forms...</p>
@@ -59,33 +68,46 @@ export default function Dashboard() {
           <p className={styles.empty}>No forms saved yet.</p>
         ) : (
           <ul className={styles.treeList}>
-            {forms.map((form) => (
-              <li key={form._id} className={styles.treeItem}>
-                <span>{form.name}</span>
+            {forms.map((form, index) => (
+              <React.Fragment key={form._id}>
+                <li className={styles.treeItem}>
+                  <span>{form.name}</span>
 
-                <div className={styles.actionBtns}>
-                  <button
-                    onClick={() => editForm(form._id)}
-                    className={styles.editBtn}
-                  >
-                    Edit
-                  </button>
+                  <div className={styles.actionBtns}>
+                    <button
+                      onClick={() => editForm(form._id)}
+                      className={styles.editBtn}
+                    >
+                      Edit
+                    </button>
 
-                  <button
-                    onClick={() => deleteForm(form._id)}
-                    className={styles.deleteBtn}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </li>
+                    <button
+                      onClick={() => deleteForm(form._id)}
+                      className={styles.deleteBtn}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </li>
+
+                {index !== forms.length - 1 && <hr className={styles.hrLine} />}
+              </React.Fragment>
             ))}
           </ul>
         )}
       </div>
 
       <div className={styles.section}>
-        <h2 className={styles.heading}>🌍 Saved Websites</h2>
+        <div className={styles.sectionHeader}>
+          <Image
+            src="/assets/templates/world-wide-web.png"
+            alt="Search"
+            width={30}
+            height={30}
+          />
+          <h2 className={styles.heading}>Saved Websites</h2>
+        </div>
+
         <p className={styles.empty}>Coming soon...</p>
       </div>
     </div>

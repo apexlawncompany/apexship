@@ -46,3 +46,44 @@
 .button:hover {
   background: #000000;
 }
+
+.editorPreviewWrapper {
+  display: flex;
+  gap: 30px;
+}
+
+.editorSection {
+  width: 60%;
+}
+
+.previewSection {
+  width: 40%;
+  border: 1px solid #d1d1d1;
+  border-radius: 14px;
+  padding: 20px;
+  background: grey;
+}
+
+.previewTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.previewFormName {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.previewField {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.previewInput {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
