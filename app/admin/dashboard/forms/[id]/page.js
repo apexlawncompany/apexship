@@ -13,7 +13,7 @@ export default function EditFormPage({ params }) {
   const [questions, setQuestions] = useState([]);
   const [isSaving, setIsSaving] = useState(false);
 
-  // Load form from DB
+  // Loading form from DB
   useEffect(() => {
     async function loadForm() {
       try {
