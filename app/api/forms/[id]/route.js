@@ -3,7 +3,9 @@ import Form from "@/models/form";
 import { connectDB } from "@/lib/db";
 
 // GET /api/forms/:id  fetches a single form
-export async function GET(req, { params }) {
+export async function GET(req, context) {
+  const params = await context.params;
+
   try {
     await connectDB();
     const form = await Form.findById(params.id);
@@ -20,7 +22,9 @@ export async function GET(req, { params }) {
 }
 
 // PUT /api/forms/:id  updates form
-export async function PUT(req, { params }) {
+export async function PUT(req, context) {
+  const params = await context.params;
+
   try {
     await connectDB();
     const body = await req.json();
@@ -41,7 +45,9 @@ export async function PUT(req, { params }) {
 }
 
 // DELETE /api/forms/:id removes form
-export async function DELETE(req, { params }) {
+export async function DELETE(req, context) {
+  const params = await context.params;
+
   try {
     await connectDB();
     await Form.findByIdAndDelete(params.id);

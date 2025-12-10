@@ -4,7 +4,8 @@ import { use, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./editForm.module.css";
 
-export default function EditFormPage({ params }) {
+export default function EditFormPage(props) {
+  const { params } = props;
   const resolvedParams = use(params);
   const formId = resolvedParams.id;
   const router = useRouter();
