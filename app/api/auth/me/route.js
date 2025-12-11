@@ -6,8 +6,9 @@ import { cookies } from "next/headers";
 export async function GET() {
   await connectDB();
 
-  const token = cookies().get("token")?.value;
-  console.log("Apex", token)
+  const cookieStore = await cookies();
+  const token = cookieStore.get("token")?.value;
+  console.log("Apex", token);
   if (!token)
     return Response.json({ error: "Not authenticated" }, { status: 401 });
 
