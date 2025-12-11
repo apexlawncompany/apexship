@@ -45,6 +45,23 @@ export default function Dashboard() {
   function editForm(id) {
     router.push(`/admin/dashboard/forms/${id}`);
   }
+  
+  function shareForm(id) {
+    const publicUrl = `${window.location.origin}/form/${id}`;
+
+    navigator.clipboard
+      .writeText(publicUrl)
+      .then(() => {
+        alert("Public URL copied to clipboard!");
+      })
+      .catch(() => {
+        alert("Failed to copy URL");
+      });
+  }
+
+  function viewResponses(id) {
+    router.push(`/admin/dashboard/forms/${id}/responses`);
+  }
 
   return (
     <div className={styles.container}>
@@ -79,6 +96,20 @@ export default function Dashboard() {
                       className={styles.editBtn}
                     >
                       Edit
+                    </button>
+
+                    <button
+                      onClick={() => viewResponses(form._id)}
+                      className={styles.responseBtn}
+                    >
+                      Responses
+                    </button>
+
+                    <button
+                      onClick={() => shareForm(form._id)}
+                      className={styles.shareBtn}
+                    >
+                      Share
                     </button>
 
                     <button
