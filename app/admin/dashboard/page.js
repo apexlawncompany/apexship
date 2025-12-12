@@ -8,6 +8,7 @@ import styles from "./dashboard.module.css";
 export default function Dashboard() {
   const [forms, setForms] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [shareFormId, setShareFormId] = useState(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -45,7 +46,7 @@ export default function Dashboard() {
   function editForm(id) {
     router.push(`/admin/dashboard/forms/${id}`);
   }
-  
+
   function shareForm(id) {
     const publicUrl = `${window.location.origin}/form/${id}`;
 
@@ -106,7 +107,7 @@ export default function Dashboard() {
                     </button>
 
                     <button
-                      onClick={() => shareForm(form._id)}
+                      onClick={() => setShareFormId(form._id)}
                       className={styles.shareBtn}
                     >
                       Share
@@ -141,6 +142,72 @@ export default function Dashboard() {
 
         <p className={styles.empty}>Coming soon...</p>
       </div>
+
+      {shareFormId && (
+        <div
+          className={styles.shareOverlay}
+          onClick={() => setShareFormId(null)}
+        >
+          <div
+            className={styles.sharePanel}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <p className={styles.shareUrl}>
+              {`${window.location.origin}/form/${shareFormId}`}
+            </p>
+
+            <div className={styles.shareActionsRow}>
+              {/* COPY */}
+              <div
+                className={styles.actionItem}
+                onClick={() => {
+                  const url = `${window.location.origin}/form/${shareFormId}`;
+                  navigator.clipboard.writeText(url);
+                }}
+              >
+                <Image
+                  src="/assets/templates/link.png"
+                  alt="Copy"
+                  width={20}
+                  height={20}
+                  className={styles.actionIcon}
+                />
+                <span className={styles.actionLabel}>Copy</span>
+              </div>
+
+              {/* OPEN */}
+              <div
+                className={styles.actionItem}
+                onClick={() => window.open(`/form/${shareFormId}`, "_blank")}
+              >
+                <Image
+                  src="/assets/templates/open-link.png"
+                  alt="Open"
+                  width={20}
+                  height={20}
+                  className={styles.actionIcon}
+                />
+                <span className={styles.actionLabel}>Open</span>
+              </div>
+
+              {/* CLOSE */}
+              <div
+                className={styles.actionItem}
+                onClick={() => setShareFormId(null)}
+              >
+                <Image
+                  src="/assets/templates/close.png"
+                  alt="Close"
+                  width={20}
+                  height={20}
+                  className={styles.actionIcon}
+                />
+                <span className={styles.actionLabel}>Close</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

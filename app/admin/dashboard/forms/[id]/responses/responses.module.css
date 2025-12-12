@@ -1,60 +1,53 @@
-.container {
-  max-width: 900px;
+.tableWrapper {
+  overflow-x: auto; /* scroll on mobile */
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+  /* background: white; */
+}
+
+.table thead {
+  color: Black;
+  font-size: 20px;
+}
+
+.table th,
+.table td {
+  border: 1px solid #e0e0e0;
+  padding: 12px 14px;
+  text-align: left;
+}
+
+.table th {
+  /* background: #f6f6f6; */
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.table td {
+  font-size: 14px;
+}
+
+.table tr:hover {
+  background: #565758;
+}
+
+.loading,
+.empty,
+.error {
+  text-align: center;
+  margin-top: 20px;
+  opacity: 0.7;
 }
 
 .title {
-  font-size: 32px;
+  font-size: 26px;
   font-weight: bold;
-  margin-bottom: 30px;
-}
-
-.loading {
-  text-align: center;
-  opacity: 0.7;
-}
-
-.error {
-  color: red;
-  text-align: center;
-}
-
-.empty {
-  text-align: center;
-  opacity: 0.7;
-}
-
-.responsesWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.responseCard {
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 12px;
-  background: none;
-}
-
-.responseTitle {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.date {
-  font-size: 14px;
-  opacity: 0.6;
-  margin-bottom: 16px;
-}
-
-.answerList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.answerItem {
-  padding: 6px 0;
-  font-size: 16px;
+  margin-bottom: 20px;
 }

@@ -36,8 +36,9 @@ export default function FormResponsesPage({ params }) {
   }, [formId]);
 
   if (loading) return <p className={styles.loading}>Loading responses...</p>;
-
   if (!form) return <p className={styles.error}>Form not found.</p>;
+
+  const questionLabels = form.questions.map((q) => q.label);
 
   return (
     <div className={styles.container}>
@@ -46,23 +47,35 @@ export default function FormResponsesPage({ params }) {
       {responses.length === 0 ? (
         <p className={styles.empty}>No responses submitted yet.</p>
       ) : (
-        <div className={styles.responsesWrapper}>
-          {responses.map((res, index) => (
-            <div key={res._id} className={styles.responseCard}>
-              <h3 className={styles.responseTitle}>Response {index + 1}</h3>
-              <p className={styles.date}>
-                Submitted: {new Date(res.submittedAt).toLocaleString()}
-              </p>
-
-              <ul className={styles.answerList}>
-                {res.answers.map((a, i) => (
-                  <li key={i} className={styles.answerItem}>
-                    <strong>{a.question}:</strong> {a.answer || "-"}
-                  </li>
+        <div className={styles.tableWrapper}>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Submitted At</th>
+                {questionLabels.map((label, index) => (
+                  <th key={index}>{label}</th>
                 ))}
-              </ul>
-            </div>
-          ))}
+              </tr>
+            </thead>
+
+            <tbody>
+              {responses.map((res, index) => (
+                <tr key={res._id}>
+                  <td>{index + 1}</td>
+                  <td>{new Date(res.submittedAt).toLocaleString()}</td>
+
+                  {questionLabels.map((label, i) => {
+                    const answerObj = res.answers.find(
+                      (ans) => ans.question === label
+                    );
+
+                    return <td key={i}>{answerObj?.answer || "-"}</td>;
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       )}
     </div>
