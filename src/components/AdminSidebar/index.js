@@ -45,15 +45,22 @@ export default function AdminSidebar() {
         </div>
       )}
 
-      <button className={styles.navBtn} onClick={goToHome}>
-        Home
-      </button>
+      <div className={styles.navGroup}>
+        <button className={styles.navBtn} onClick={goToHome}>
+          Home
+        </button>
+        <hr className={styles.hrLine} />
 
-      <hr className={styles.hrLine} />
+        <button className={styles.navBtn} onClick={goToDashboard}>
+          Dashboard
+        </button>
 
-      <button className={styles.navBtn} onClick={goToDashboard}>
-        Dashboard
-      </button>
+        <hr className={styles.hrLine} />
+
+        <button className={styles.navBtn}>
+          More
+        </button>
+      </div>
 
       <button className={styles.logoutBtn} onClick={handleLogout}>
         Logout

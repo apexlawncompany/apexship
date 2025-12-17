@@ -51,3 +51,59 @@
   font-weight: bold;
   margin-bottom: 20px;
 }
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 20px;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+  .tableWrapper {
+    margin-top: 12px;
+    border-radius: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table {
+    min-width: 600px;
+  }
+
+  .table th,
+  .table td {
+    padding: 10px 8px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .table thead {
+    font-size: 14px;
+  }
+
+  .table tr:hover {
+    background: transparent;
+  }
+  .submittedCol {
+    max-width: 120px;
+    padding-left: 6px;
+    padding-right: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .table thead th {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 2;
+  }
+
+  .loading,
+  .empty,
+  .error {
+    font-size: 14px;
+    margin-top: 16px;
+  }
+}
+

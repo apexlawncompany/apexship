@@ -52,7 +52,7 @@ export default function FormResponsesPage({ params }) {
             <thead>
               <tr>
                 <th>#</th>
-                <th>Submitted At</th>
+                <th className={styles.submittedCol}>Submitted At</th>
                 {questionLabels.map((label, index) => (
                   <th key={index}>{label}</th>
                 ))}
@@ -63,7 +63,10 @@ export default function FormResponsesPage({ params }) {
               {responses.map((res, index) => (
                 <tr key={res._id}>
                   <td>{index + 1}</td>
-                  <td>{new Date(res.submittedAt).toLocaleString()}</td>
+
+                  <td className={styles.submittedCol}>
+                    {new Date(res.submittedAt).toLocaleString()}
+                  </td>
 
                   {questionLabels.map((label, i) => {
                     const answerObj = res.answers.find(
