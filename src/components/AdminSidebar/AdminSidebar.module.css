@@ -1,5 +1,6 @@
 .sidebar {
   width: 250px;
+  flex-shrink: 0;   /* prevents sidebar collapse */
   background: #111;
   padding: 30px 20px;
   box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.4);

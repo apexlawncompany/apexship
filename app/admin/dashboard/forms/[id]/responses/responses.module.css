@@ -1,41 +1,7 @@
-.tableWrapper {
-  overflow-x: auto; /* scroll on mobile */
-  margin-top: 20px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-}
-
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 700px;
-  /* background: white; */
-}
-
-.table thead {
-  color: Black;
-  font-size: 20px;
-}
-
-.table th,
-.table td {
-  border: 1px solid #e0e0e0;
-  padding: 12px 14px;
-  text-align: left;
-}
-
-.table th {
-  /* background: #f6f6f6; */
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.table td {
-  font-size: 14px;
-}
-
-.table tr:hover {
-  background: #565758;
+.title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .loading,
@@ -46,13 +12,62 @@
   opacity: 0.7;
 }
 
-.title {
-  font-size: 26px;
-  font-weight: bold;
-  margin-bottom: 20px;
+.tableWrapper {
+  width: 100%; /* viewport width */
+  overflow-x: auto; /* scroll when needed */
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
 }
 
-@media (max-width: 768px) {
+.table {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead {
+  color: #000;
+}
+
+.table th,
+.table td {
+  border: 1px solid #e0e0e0;
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 14px;
+  white-space: nowrap; /* prevent column squeeze */
+}
+
+.table th {
+  font-weight: 600;
+  background: #fff;
+}
+
+.table tr:hover {
+  background: #565758;
+}
+
+.submittedCol {
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* scroll hint */
+.tableWrapper::after {
+  content: "";
+  position: sticky;
+  right: 0;
+  top: 0;
+  width: 24px;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.9), transparent);
+}
+
+@media (max-width: 767px) {
   .title {
     font-size: 20px;
     margin-bottom: 14px;
@@ -62,41 +77,29 @@
   .tableWrapper {
     margin-top: 12px;
     border-radius: 8px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .table {
-    min-width: 600px;
   }
 
   .table th,
   .table td {
     padding: 10px 8px;
     font-size: 13px;
-    white-space: nowrap;
   }
 
-  .table thead {
-    font-size: 14px;
-  }
-
-  .table tr:hover {
-    background: transparent;
-  }
   .submittedCol {
-    max-width: 120px;
+    font-size: 12px;
     padding-left: 6px;
     padding-right: 6px;
-    font-size: 12px;
-    white-space: nowrap;
   }
 
   .table thead th {
     position: sticky;
     top: 0;
-    background: #fff;
     z-index: 2;
+    background: #fff;
+  }
+
+  .table tr:hover {
+    background: transparent;
   }
 
   .loading,
@@ -106,4 +109,3 @@
     margin-top: 16px;
   }
 }
-
