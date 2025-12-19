@@ -1,33 +1,24 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import styles from "./AdminSidebar.module.css";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import styles from "./AdminSidebar.module.css";
+import { useAuth } from "@/src/utils/AdminAuthContext";
 
 export default function AdminSidebar() {
-  const [user, setUser] = useState(null);
   const router = useRouter();
-
-  useEffect(() => {
-    async function loadUser() {
-      const res = await fetch("/api/auth/me", { credentials: "include" });
-      if (res.ok) {
-        const data = await res.json();
-        setUser(data.user);
-      }
-    }
-    loadUser();
-  }, []);
+  const { user, setUser } = useAuth();
 
   async function handleLogout() {
     await fetch("/api/auth/logout", { method: "POST" });
+    setUser(null);
     router.push("/admin/login");
   }
 
   function goToDashboard() {
     router.push("/admin/dashboard");
   }
+
   function goToHome() {
     router.push("/admin");
   }
@@ -53,13 +44,23 @@ export default function AdminSidebar() {
           </button>
         </div>
       )}
-      <button className={styles.navBtn} onClick={goToHome}>
-        Home
-      </button>
-      <hr className={styles.hrLine}></hr>
-      <button className={styles.navBtn} onClick={goToDashboard}>
-        Dashboard
-      </button>
+
+      <div className={styles.navGroup}>
+        <button className={styles.navBtn} onClick={goToHome}>
+          Home
+        </button>
+        <hr className={styles.hrLine} />
+
+        <button className={styles.navBtn} onClick={goToDashboard}>
+          Dashboard
+        </button>
+
+        <hr className={styles.hrLine} />
+
+        <button className={styles.navBtn}>
+          More
+        </button>
+      </div>
 
       <button className={styles.logoutBtn} onClick={handleLogout}>
         Logout
