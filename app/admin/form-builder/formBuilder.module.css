@@ -47,6 +47,13 @@
   background: #000000;
 }
 
+@media (prefers-color-scheme: dark) {
+  .input,
+  .select {
+    color: #000000;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     max-width: 100%;
