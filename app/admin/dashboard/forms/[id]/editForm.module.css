@@ -79,13 +79,21 @@
 .previewField {
   display: flex;
   flex-direction: column;
-  margin-bottom: 14px;
+  margin-bottom: 5px;
 }
 
 .previewInput {
+  margin-top: 5px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .input,
+  .select {
+    color: #000000;
+  }
 }
 
 @media (max-width: 768px) {
