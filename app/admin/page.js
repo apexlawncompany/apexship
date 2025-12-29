@@ -18,7 +18,7 @@ export default function AdminHome() {
 
   return (
     <>
-      <h1 className={styles.welcome}>
+      <h1 className={`heading-font ${styles.welcome}`}>
         {loading ? "Welcome…" : `Welcome, ${user?.name}`}
       </h1>
 

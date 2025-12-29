@@ -42,7 +42,7 @@ export default function FormResponsesPage({ params }) {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Responses for: {form.name}</h1>
+      <h1 className={`heading-font ${styles.title}`}>Responses for: {form.name}</h1>
 
       {responses.length === 0 ? (
         <p className={styles.empty}>No responses submitted yet.</p>

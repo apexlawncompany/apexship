@@ -75,7 +75,7 @@ export default function EditFormPage(props) {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Edit Form</h1>
+      <h1 className={`heading-font ${styles.title}`}>Edit Form</h1>
 
       <div className={styles.editorPreviewWrapper}>
         {/* LEFT SIDE - Editor */}
@@ -126,7 +126,7 @@ export default function EditFormPage(props) {
 
         {/* RIGHT SIDE - Preview */}
         <div className={styles.previewSection}>
-          <h2 className={styles.previewTitle}>Preview</h2>
+          <h2 className={`heading-font ${styles.previewTitle}`}>Preview</h2>
           <p className={styles.previewFormName}>{formName}</p>
 
           {questions

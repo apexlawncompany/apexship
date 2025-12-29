@@ -63,7 +63,7 @@ export default function FormBuilder() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Create New Form</h1>
+      <h1 className={`heading-font ${styles.title}`}>Create New Form</h1>
 
       <input
         type="text"
