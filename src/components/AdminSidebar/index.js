@@ -28,7 +28,7 @@ export default function AdminSidebar() {
       {user && (
         <div className={styles.profileBox}>
           <Image src="/user-bg.png" alt="User acc" width={30} height={30} />
-          <p className={styles.profileName}>{user.name}</p>
+          <p className={`heading-font ${styles.profileName}`}>{user.name}</p>
 
           <button
             className={styles.mobileLogoutIcon}

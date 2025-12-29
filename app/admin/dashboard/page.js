@@ -66,7 +66,7 @@ export default function Dashboard() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Dashboard</h1>
+      <h1 className={`heading-font ${styles.title}`}>Dashboard</h1>
 
       {/* Forms Section */}
       <div className={styles.section}>
@@ -77,7 +77,7 @@ export default function Dashboard() {
             width={30}
             height={30}
           />
-          <h2 className={styles.heading}>Saved Forms</h2>
+          <h2 className={`heading-font ${styles.heading}`}>Saved Forms</h2>
         </div>
 
         {loading ? (
@@ -137,7 +137,7 @@ export default function Dashboard() {
             width={30}
             height={30}
           />
-          <h2 className={styles.heading}>Saved Websites</h2>
+          <h2 className={`heading-font ${styles.heading}`}>Saved Websites</h2>
         </div>
 
         <p className={styles.empty}>Coming soon...</p>

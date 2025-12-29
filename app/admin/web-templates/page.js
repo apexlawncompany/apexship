@@ -30,7 +30,7 @@ export default function TemplatesPage() {
 
   return (
     <div className={styles.wrapper}>
-      <h1 className={styles.heading}>Choose Your Template</h1>
+      <h1 className={`heading-font ${styles.heading}`}>Choose Your Template</h1>
 
       <div className={styles.grid}>
         {templates.map((template) => (
@@ -42,7 +42,7 @@ export default function TemplatesPage() {
               height={40}
               className={styles.templatePreview}
             />
-            <h3>{template.name}</h3>
+            <h3 className={`heading-font`}>{template.name}</h3>
             <p>{template.description}</p>
             <button
               className={styles.button}
