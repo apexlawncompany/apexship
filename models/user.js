@@ -12,6 +12,7 @@ const UserSchema = new mongoose.Schema({
   otpAttempts: { type: Number, default: 0 },
   otpUsed: { type: Boolean, default: false },
   otpLastSentAt: Date,
+  otpPurpose: String, // "signup" or "login": a code only works for what it was sent for
 });
 
 const User = mongoose.models.User || mongoose.model("User", UserSchema);

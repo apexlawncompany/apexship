@@ -34,7 +34,7 @@ export async function POST(req) {
         if (!user) user = await User.create({ email });
 
         // issueOtp enforces the 60-second wait; within it, nothing is sent.
-        const { code } = await issueOtp(user);
+        const { code } = await issueOtp(user, "signup");
         if (code) await sendOTP(email, code);
       } catch (err) {
         console.error("send-otp: could not send code:", err?.message || err);

@@ -38,7 +38,7 @@ export async function POST(req) {
   const user = await findUserByEmail(email);
   if (!user) return invalid;
 
-  const result = await verifyOtp(user, otp);
+  const result = await verifyOtp(user, otp, "signup");
   if (!result.success) {
     return Response.json({ error: result.error }, { status: 400 });
   }
