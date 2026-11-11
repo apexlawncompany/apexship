@@ -1,28 +1,33 @@
-import { connectDB } from "@/lib/db";
-import User from "@/models/user";
 import bcrypt from "bcrypt";
-import { signToken } from "@/lib/jwt";
 import { cookies } from "next/headers";
+import { connectDB } from "@/lib/db";
+import { findUserByEmail } from "@/models/user";
+import { signToken } from "@/lib/jwt";
+
+// A bcrypt hash of a random throwaway value (not a secret, it matches nothing).
+// When an email has no account we still compare against it, so "no such
+// email" takes as long as "wrong password" and timing can't reveal accounts.
+const DUMMY_HASH =
+  "$2b$10$6tnXi3r9y5JZrtYjnFLOUePQqVkCbSve5Gn7FYAYNW7e34TAXYw7S";
 
 export async function POST(req) {
-  await connectDB();
-
-  const { email, password } = await req.json();
+  const body = await req.json().catch(() => ({}));
+  const email = typeof body.email === "string" ? body.email.trim() : "";
+  const password = typeof body.password === "string" ? body.password : "";
 
   if (!email || !password) {
     return Response.json(
-      { error: "Email/Password is missing" },
-      { status: 404 }
+      { error: "Email and password are required" },
+      { status: 400 }
     );
   }
 
-  const user = await User.findOne({ email });
-  if (!user) {
-    return Response.json({ error: "User not found" }, { status: 404 });
-  }
+  await connectDB();
+  const user = await findUserByEmail(email);
 
-  const ok = await bcrypt.compare(password, user.password);
-  if (!ok) {
+  // Unknown email and wrong password get the identical reply.
+  const ok = await bcrypt.compare(password, user?.password || DUMMY_HASH);
+  if (!user?.password || !ok) {
     return Response.json({ error: "Invalid credentials" }, { status: 401 });
   }
 
