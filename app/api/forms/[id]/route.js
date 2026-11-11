@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
 import Form from "@/models/form";
 import { connectDB } from "@/lib/db";
+import { requireApiAuth } from "@/lib/auth";
 
 // GET /api/forms/:id  fetches a single form
+// PUBLIC: customers load the form from app/form/[id].
 export async function GET(req, context) {
   const params = await context.params;
 
@@ -21,8 +23,11 @@ export async function GET(req, context) {
   }
 }
 
-// PUT /api/forms/:id  updates form
+// PUT /api/forms/:id  updates form (admin only)
 export async function PUT(req, context) {
+  const denied = await requireApiAuth();
+  if (denied) return denied;
+
   const params = await context.params;
 
   try {
@@ -44,8 +49,11 @@ export async function PUT(req, context) {
   }
 }
 
-// DELETE /api/forms/:id removes form
+// DELETE /api/forms/:id  removes form (admin only)
 export async function DELETE(req, context) {
+  const denied = await requireApiAuth();
+  if (denied) return denied;
+
   const params = await context.params;
 
   try {

@@ -40,7 +40,6 @@ export default function BookConsult() {
     if (validateForm()) {
       alert("Form submitted successfully!");
     }
-    console.log("Consult Form", formData);
   };
 
   return (

@@ -3,9 +3,12 @@ import { jwtVerify } from "jose";
 
 const secret = new TextEncoder().encode(process.env.JWT_SECRET);
 
+// Checks the login token. HS256 is locked here too, matching lib/jwt.js.
+// No secret configured means nobody counts as logged in.
 async function verify(token) {
+  if (!process.env.JWT_SECRET) return null;
   try {
-    return await jwtVerify(token, secret);
+    return await jwtVerify(token, secret, { algorithms: ["HS256"] });
   } catch (e) {
     return null;
   }

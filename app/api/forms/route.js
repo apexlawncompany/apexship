@@ -1,9 +1,14 @@
 import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/db";
 import Form from "@/models/form";
+import { requireApiAuth } from "@/lib/auth";
 
 
+// POST /api/forms  creates a form (admin only)
 export async function POST(request) {
+  const denied = await requireApiAuth();
+  if (denied) return denied;
+
   try {
     const body = await request.json();
     const { name, questions } = body;
@@ -26,8 +31,11 @@ export async function POST(request) {
   }
 }
 
-// GET /api/forms list all forms
+// GET /api/forms  lists all forms (admin only)
 export async function GET() {
+  const denied = await requireApiAuth();
+  if (denied) return denied;
+
   try {
     await connectDB();
     const forms = await Form.find().sort({ createdAt: -1 });

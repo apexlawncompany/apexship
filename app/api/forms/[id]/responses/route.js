@@ -2,8 +2,10 @@ import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/db";
 import Form from "@/models/form";
 import FormResponse from "@/models/formResponse";
+import { requireApiAuth } from "@/lib/auth";
 
 // POST /api/forms/:id/responses
+// PUBLIC: customers submit their answers from app/form/[id].
 export async function POST(req, { params }) {
   try {
     await connectDB();
@@ -38,8 +40,11 @@ export async function POST(req, { params }) {
   }
 }
 
-// GET /api/forms/:id/responses
+// GET /api/forms/:id/responses  lists answers (admin only)
 export async function GET(req, { params }) {
+  const denied = await requireApiAuth();
+  if (denied) return denied;
+
   try {
     await connectDB();
 
